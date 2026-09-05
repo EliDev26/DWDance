@@ -170,16 +170,17 @@ bytes each). Replace them with real photographs at these sizes:
 | `welcome-scholarships.jpg` | Home intro | 800 × 1200 | 2:3 | JPG or WebP, ~120 KB |
 | `ballet.jpg` | Ballet card (home + classes) | 1200 × 900 | 4:3 | JPG or WebP, ~80 KB |
 | `tap` `modern` | Style cards | 1200 × 900 | 4:3 | WebP, ~80 KB |
-| `preschool` | NATD / pre-school | 1200 × 900 | 4:3 | WebP, ~80 KB |
-| `studio` | Intro / story | 1600 × 1067 | 3:2 | WebP, ~110 KB |
-| `performance` | Show photo | 1600 × 1067 | 3:2 | WebP, ~110 KB |
+| `preschool.jpg` | NATD section (home + about) | 1000 × 1000 | 1:1 | JPG or WebP, ~90 KB |
+| `performance.jpg` | End-of-year awards (about) | 1600 × 1200 | 4:3 | JPG or WebP, ~110 KB |
+| `studio` | About story | 1600 × 1067 | 3:2 | WebP, ~110 KB |
 | `principal` | Portrait | 1000 × 1000 | 1:1 | WebP, ~90 KB |
 | `store-*` (×4) | Store categories | 1000 × 1000 | 1:1 | WebP, ~70 KB |
 | `og-image` | Social sharing | 1200 × 630 | 1.91:1 | **JPG** — several platforms won't render SVG |
 | `logo` / `favicon` | Brand mark | — | — | Keep as SVG |
 
-**Four slots are already wired to real photo filenames** — `logo.png`,
-`hero.jpg`, `welcome-scholarships.jpg` and `ballet.jpg`. Overwrite those files
+**Six slots are already wired to real photo filenames** — `logo.png`,
+`hero.jpg`, `welcome-scholarships.jpg`, `ballet.jpg`, `preschool.jpg` and
+`performance.jpg`. Overwrite those files
 in place and no HTML needs touching. For the remaining `.svg` placeholders you
 must rename to `.webp`/`.jpg` and edit the matching `<img src>`.
 

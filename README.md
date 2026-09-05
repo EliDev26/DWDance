@@ -56,6 +56,8 @@ page itself. Search the HTML for `class="editable"` to find each one.
    | `hero.jpg` | Home hero | 1600 × 1200 (4:3) |
    | `welcome-scholarships.jpg` | Home "Welcome to DWD Dance" | 800 × 1200 (2:3 portrait) |
    | `ballet.jpg` | Home + Classes ballet card | 1200 × 900 (4:3) |
+   | `preschool.jpg` | Home + About NATD section | 1000 × 1000 (square) |
+   | `performance.jpg` | About show & performance | 1600 × 1200 (4:3) |
    The remaining `.svg` files are still labelled placeholders; see
    `docs/05-implementation-and-hosting.md` for their sizes.
 8. **Social links** — Facebook is live; add Instagram back if you want it.
