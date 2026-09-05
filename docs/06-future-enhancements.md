@@ -43,7 +43,7 @@ contact page, showing which taster slots are actually free. Removes the
 back-and-forth entirely.
 
 ### 7. A photo gallery / show page
-`gallery.html` with 12–20 images from the annual show, lazy-loaded in a CSS
+`gallery.html` with 12–20 images from the show, lazy-loaded in a CSS
 grid. High emotional value for prospective parents and heavily shared by
 existing ones. Photo consent applies.
 

@@ -176,7 +176,7 @@ Each is a genuine parent question and a realistic 400–600 word page:
 * "What is the NATD, and do dance exams matter?"
 * "How to do a ballet bun" — endlessly searched, endlessly shared
 * "Ballet, tap or modern — which should my child try first?"
-* An annual show recap with photographs
+* A show recap with photographs, in show years
 
 Two or three of these, well written, would out-perform any amount of keyword
 tinkering on the existing pages. Add them as `blog/` pages linked from the

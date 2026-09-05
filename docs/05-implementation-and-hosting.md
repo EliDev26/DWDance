@@ -165,8 +165,11 @@ bytes each). Replace them with real photographs at these sizes:
 
 | File | Purpose | Supply at | Aspect | Format |
 |---|---|---|---|---|
-| `hero.svg` → `hero.webp` | Home hero | 1600 × 2000 | 4:5 | WebP, ~150 KB |
-| `ballet` `tap` `modern` | Style cards | 1200 × 900 | 4:3 | WebP, ~80 KB |
+| `logo.png` | Header, footer, favicon | ~600 square | 1:1 | **PNG** (keeps the black ground) |
+| `hero.jpg` | Home hero | 1600 × 1200 | 4:3 | JPG or WebP, ~150 KB |
+| `welcome-scholarships.jpg` | Home intro | 800 × 1200 | 2:3 | JPG or WebP, ~120 KB |
+| `ballet.jpg` | Ballet card (home + classes) | 1200 × 900 | 4:3 | JPG or WebP, ~80 KB |
+| `tap` `modern` | Style cards | 1200 × 900 | 4:3 | WebP, ~80 KB |
 | `preschool` | NATD / pre-school | 1200 × 900 | 4:3 | WebP, ~80 KB |
 | `studio` | Intro / story | 1600 × 1067 | 3:2 | WebP, ~110 KB |
 | `performance` | Show photo | 1600 × 1067 | 3:2 | WebP, ~110 KB |
@@ -175,9 +178,15 @@ bytes each). Replace them with real photographs at these sizes:
 | `og-image` | Social sharing | 1200 × 630 | 1.91:1 | **JPG** — several platforms won't render SVG |
 | `logo` / `favicon` | Brand mark | — | — | Keep as SVG |
 
-**If you change the file extension, update the `src` in the HTML.** Keeping the
-`.svg` names and simply overwriting is not possible for a photograph — rename
-to `.webp` and edit the matching `<img src>`.
+**Four slots are already wired to real photo filenames** — `logo.png`,
+`hero.jpg`, `welcome-scholarships.jpg` and `ballet.jpg`. Overwrite those files
+in place and no HTML needs touching. For the remaining `.svg` placeholders you
+must rename to `.webp`/`.jpg` and edit the matching `<img src>`.
+
+The logo is white text on a black ground, so it is shown on a dark tile in the
+header and directly on the charcoal footer. Removing the black background would
+leave white text invisible on the white header — if you want a transparent
+logo, you need a version with charcoal text, not just the background stripped.
 
 Optimisation:
 

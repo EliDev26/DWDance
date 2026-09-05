@@ -118,7 +118,7 @@ don't have one of them, delete that whole `<li>…</li>` block.
 ```
 
 Alt text describes the photo for anyone who can't see it. Say what is happening:
-*"Junior class rehearsing on stage before the annual show"*, not *"IMG_4471"*.
+*"Junior class rehearsing on stage before the show"*, not *"IMG_4471"*.
 
 ### Add an FAQ
 

@@ -163,7 +163,8 @@ Every component below exists in `styles.css` and is used on at least two pages.
 | CTA band | `.cta-band` | Blush→gold gradient, closes most pages |
 | Store banner | `.store-banner` | Charcoal panel — the one dark element, used for emphasis |
 | Badge strip | `.badge-strip` | Accreditation row under the hero |
-| Footer | `.site-footer` | 4 columns → 3 → 1 |
+| Footer | `.site-footer` | 4 columns → 3 → 1; logo on the charcoal ground, social row horizontal |
+| Portrait image | `.img-portrait` | Uncropped poster/collage artwork in a split column |
 | Cookie bar | `.cookie-bar` | Fixed, dismissed choice stored locally |
 | Editable marker | `.editable` | Pale yellow highlight on every placeholder value |
 

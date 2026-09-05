@@ -37,14 +37,14 @@ Rules applied throughout:
 | Hero H1 | Emotional promise, not a description | *"Where children find their confidence, one step at a time"* — the outcome the parent is buying |
 | Hero lede | Facts: styles, ages, area, exams | Answers "is this for us?" in one read |
 | Hero CTA | One primary, one lower-commitment | "Book a Free Taster Class" / "See Classes & Fees" |
-| Trust row | Three credentials at a glance | NATD · small classes · annual show |
+| Trust row | Three credentials at a glance | NATD · small classes · biennial show |
 | Accreditation strip | Answer "are they qualified and safe?" early | Positioned above the fold on desktop |
 | Intro | Establish longevity and individual attention | Two specific student stories rather than adjectives |
 | Why Choose Us | Four objections, four answers | Safety · qualifications · attention · performance |
 | Dance Styles | Route to the right class | One paragraph each, no jargon |
 | Age Groups | Self-identification | Parent finds their child's row instantly |
 | NATD | Explain what accreditation *means* | Most parents don't know the NATD; the copy says why it matters |
-| Performance | Emotional payoff | "Standing on a stage changes a child" |
+| Performance | Emotional payoff | "Standing on a stage changes a child". The show runs every other year; watch weeks fill the years between |
 | Testimonials | Social proof | **Placeholder — replace with real quotes** |
 | Store | Promote the shop without a hard sell | Framed as convenience: "no guessing whether it's the right shade of pink" |
 | Join in 3 steps | Remove process anxiety | Ends on "nothing to pay" |

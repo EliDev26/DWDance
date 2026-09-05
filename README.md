@@ -47,9 +47,17 @@ page itself. Search the HTML for `class="editable"` to find each one.
 5. **Testimonials** — real quotes, with each family's permission, on
    `index.html` and `about.html`.
 6. **Uniform lists and sizing** — `store.html`.
-7. **Photography** — replace the placeholder SVGs in `assets/img/`
-   (see `docs/05-implementation-and-hosting.md` for exact sizes).
-8. **Social links** — the footer's Facebook and Instagram links are `#`.
+7. **Photography** — overwrite the placeholder files in `assets/img/`,
+   **keeping the same filenames**, and no HTML needs editing:
+   | File | Where it appears | Supply at |
+   |---|---|---|
+   | `logo.png` | Header, footer, browser tab | Square, ~600px, black ground |
+   | `hero.jpg` | Home hero | 1600 × 1200 (4:3) |
+   | `welcome-scholarships.jpg` | Home "Welcome to DWD Dance" | 800 × 1200 (2:3 portrait) |
+   | `ballet.jpg` | Home + Classes ballet card | 1200 × 900 (4:3) |
+   The remaining `.svg` files are still labelled placeholders; see
+   `docs/05-implementation-and-hosting.md` for their sizes.
+8. **Social links** — Facebook is live; add Instagram back if you want it.
 9. **Enquiry form** — wire it to a real inbox (instructions are in a comment
    inside `contact.html`); until then it opens the parent's email app.
 10. **Legal pages** — read `privacy.html` and `cookies.html` properly and

@@ -339,7 +339,12 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 }
 
 .brand { display: inline-flex; align-items: center; gap: var(--s-3); text-decoration: none; }
-.brand__mark { width: 40px; height: 40px; flex: none; }
+.brand__mark {
+  width: 44px; height: 44px; flex: none;
+  border-radius: var(--r-sm);
+  background: var(--c-ink-900);
+  object-fit: contain;
+}
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name {
   font-family: var(--font-display);
@@ -543,12 +548,12 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .hero__media { position: relative; }
 .hero__media img {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center 35%;   /* keeps faces in frame on tighter crops */
   border-radius: var(--r-lg);
   box-shadow: var(--shadow-lg);
 }
-@media (max-width: 61.99em) { .hero__media img { aspect-ratio: 4 / 3; } }
 
 .hero__badge {
   position: absolute;
@@ -564,6 +569,15 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .hero__badge strong { display: block; font-family: var(--font-display); font-size: 1.5rem; line-height: 1; }
 .hero__badge span { font-size: var(--fs-xs); color: var(--text-muted); }
 @media (max-width: 47.99em) { .hero__badge { left: var(--s-4); right: var(--s-4); max-width: none; } }
+
+/* Uncropped portrait/poster artwork in a split column ---------------------- */
+.img-portrait {
+  width: 100%;
+  max-width: 30rem;
+  margin-inline: auto;
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-md);
+}
 
 /* Page hero (interior pages) --------------------------------------------- */
 .page-hero {
@@ -769,8 +783,9 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 }
 .contact-tile:hover { border-color: var(--c-blush-300); box-shadow: var(--shadow-sm); color: inherit; }
 .contact-tile svg { width: 22px; height: 22px; color: var(--c-rose-600); flex: none; margin-top: 0.15em; }
-.contact-tile__label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--ls-wide); color: var(--text-muted); }
-.contact-tile__value { font-weight: 600; color: var(--text-strong); overflow-wrap: anywhere; }
+.contact-tile__label { display: block; font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: var(--ls-wide); color: var(--text-muted); }
+.contact-tile__value { display: block; font-size: var(--fs-sm); font-weight: 600; line-height: 1.35;
+  color: var(--text-strong); overflow-wrap: anywhere; }
 
 /* 5.15 CTA band ---------------------------------------------------------- */
 .cta-band {
@@ -828,10 +843,12 @@ table.data tbody tr:last-child td { border-bottom: 0; }
   letter-spacing: var(--ls-wide); text-transform: uppercase; margin-bottom: var(--s-4); }
 .footer-col ul { display: grid; gap: var(--s-3); }
 
+.footer-brand__logo { width: 132px; height: auto; margin-bottom: var(--s-4); }
 .footer-brand__name { font-family: var(--font-display); font-size: var(--fs-lg); color: var(--c-white); }
 .footer-brand p { margin-top: var(--s-4); max-width: 34ch; }
 
-.social-row { display: flex; gap: var(--s-3); margin-top: var(--s-5); }
+.footer-col .social-row { display: flex; flex-direction: row; flex-wrap: wrap;
+  gap: var(--s-3); margin-top: var(--s-5); }
 .social-row a {
   display: grid; place-items: center;
   width: 44px; height: 44px;
