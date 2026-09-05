@@ -7,6 +7,11 @@
   "background_color": "#FFFFFF",
   "theme_color": "#C1707E",
   "icons": [
-    { "src": "assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    {
+      "src": "assets/img/logo.png",
+      "sizes": "600x620",
+      "type": "image/png",
+      "purpose": "any"
+    }
   ]
 }

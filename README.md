@@ -48,8 +48,8 @@ page itself. Search the HTML for `class="editable"` to find each one.
 5. **Testimonials** — real quotes, with each family's permission, on
    `index.html` and `about.html`.
 6. **Uniform lists and sizing** — `store.html`.
-7. **Photography** — overwrite the placeholder files in `assets/img/`,
-   **keeping the same filenames**, and no HTML needs editing:
+7. **Photography** — **every image is now a drop-in file.** Overwrite anything
+   in `assets/img/` keeping the same filename, and no HTML needs editing:
    | File | Where it appears | Supply at |
    |---|---|---|
    | `logo.png` | Header, footer, browser tab | Square, ~600px, black ground |
@@ -58,8 +58,12 @@ page itself. Search the HTML for `class="editable"` to find each one.
    | `ballet.jpg` | Home + Classes ballet card | 1200 × 900 (4:3) |
    | `preschool.jpg` | Home + About NATD section | 1000 × 1000 (square) |
    | `performance.jpg` | About show & performance | 1600 × 1200 (4:3) |
-   The remaining `.svg` files are still labelled placeholders; see
-   `docs/05-implementation-and-hosting.md` for their sizes.
+   | `tap.jpg` `modern.jpg` | Style cards | 1200 × 900 (4:3) |
+   | `studio.jpg` | About story | 1600 × 1067 (3:2) |
+   | `principal.jpg` | Meet the principal | 1000 × 1000 (square) |
+   | `store-*.jpg` (×4) | Store categories | 1000 × 1000 (square) |
+   | `og-image.jpg` | Social sharing preview | 1200 × 630 |
+   Each placeholder states its own size on the image itself.
 8. **Social links** — Facebook is live; add Instagram back if you want it.
 9. **Enquiry form** — wire it to a real inbox (instructions are in a comment
    inside `contact.html`); until then it opens the parent's email app.
@@ -79,8 +83,14 @@ page itself. Search the HTML for `class="editable"` to find each one.
 | `docs/05-implementation-and-hosting.md` | Implementation plan, One.com upload, images, Core Web Vitals |
 | `docs/06-future-enhancements.md` | What to add next, in priority order |
 | `docs/07-owners-guide.md` | How to make everyday edits without breaking anything |
+| `docs/08-security.md` | Security review against the 20-point checklist |
 
 ---
+
+## Before uploading to One.com
+
+Upload the site files only. **Do not upload `docs/`, `README.md` or
+`.gitignore`** — they are internal and would be publicly readable.
 
 ## Viewing it locally
 

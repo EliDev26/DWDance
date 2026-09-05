@@ -27,12 +27,31 @@ ErrorDocument 404 /404.html
 </IfModule>
 
 # --- Security headers --------------------------------------------------------
+# If One.com rejects any single line, delete that line only.
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set X-Frame-Options "SAMEORIGIN"
-  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header set X-Frame-Options "DENY"
+  Header set Cross-Origin-Opener-Policy "same-origin"
+  Header set Cross-Origin-Resource-Policy "same-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()"
+
+  # HSTS: browsers refuse plain HTTP for this domain for a year.
+  # Only enable once HTTPS is confirmed working on every page, including www.
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+
+  # Content-Security-Policy. The sha256 covers the one inline <script> that
+  # sets the .js class before first paint. If you EVER change that script,
+  # this hash must be recomputed or the script will be blocked.
+  # Adding a form endpoint (Formspree etc.)? Append its origin to form-action.
+  Header set Content-Security-Policy "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self'; script-src 'self' 'sha256-riitXBKGtl5y5ccA7GF6ccqJuwEVP5tm8j0ff/fbw9U='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; upgrade-insecure-requests"
 </IfModule>
+
+# --- Never serve dotfiles, source control or docs ----------------------------
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+RedirectMatch 404 /\.git(/|$)
 
 # --- Force HTTPS and the www host (one canonical address) --------------------
 <IfModule mod_rewrite.c>

@@ -107,6 +107,7 @@ preserves the design exactly and is simpler to maintain.
    index.html  classes.html  store.html  about.html  contact.html
    thank-you.html  privacy.html  cookies.html  404.html
    robots.txt  sitemap.xml  site.webmanifest  .htaccess
+   (do NOT upload docs/ or README.md — internal only)
    assets/css/styles.css
    assets/js/main.js
    assets/img/*
@@ -178,7 +179,9 @@ bytes each). Replace them with real photographs at these sizes:
 | `og-image` | Social sharing | 1200 × 630 | 1.91:1 | **JPG** — several platforms won't render SVG |
 | `logo` / `favicon` | Brand mark | — | — | Keep as SVG |
 
-**Six slots are already wired to real photo filenames** — `logo.png`,
+**Every image is now a drop-in file** — overwrite any `.jpg`/`.png` in
+`assets/img/` keeping its filename and no HTML changes are needed. The six
+already matched to supplied photographs are — `logo.png`,
 `hero.jpg`, `welcome-scholarships.jpg`, `ballet.jpg`, `preschool.jpg` and
 `performance.jpg`. Overwrite those files
 in place and no HTML needs touching. For the remaining `.svg` placeholders you

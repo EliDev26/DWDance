@@ -947,3 +947,19 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .list-numbered { padding-left: var(--s-5); display: grid; gap: var(--s-3); }
 .list-numbered li { list-style: decimal; }
 .list-numbered li::marker { color: var(--c-rose-600); font-weight: 600; }
+
+/* --------------------------------------------------------------------------
+   9. UTILITY CLASSES REPLACING INLINE STYLES
+   These exist so the Content-Security-Policy can forbid inline styles
+   ('unsafe-inline' removed from style-src). Do not reintroduce style="..."
+   attributes — add a class here instead.
+   -------------------------------------------------------------------------- */
+.text-sm      { font-size: var(--fs-sm); }
+.media-framed { border-radius: var(--r-md); box-shadow: var(--shadow-md); }
+.flex-none    { flex: none; }
+.is-block     { display: block; }
+.one-col      { grid-template-columns: 1fr; }
+.gap-5        { gap: var(--s-5); }
+.items-start  { align-items: start; }
+.stack-rows   { flex-direction: column; gap: var(--s-1); }
+.centre-panel { min-height: 52vh; display: grid; place-items: center; }
