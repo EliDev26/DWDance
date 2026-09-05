@@ -128,8 +128,12 @@ Two lines to keep:
 
 > *"We will always say no to a request that isn't safe yet."*
 
-**To supply:** founding year and founder name, the principal's training,
-qualifications and one personal sentence. A short quote in the principal's own
+**Supplied:** founded in 2016 by Bethany Donelon and Sally Wild. A 2016
+founding rules out any "generations of families" or "three to eighteen" claim,
+so the copy says "still with us a decade later" instead, which is true.
+
+**To supply:** the principal's training, qualifications and one personal
+sentence, plus Sally Wild's paragraph if she wants one. A short quote in the principal's own
 words converts better than a list of credentials — a single line about what
 every child should leave the school with is enough.
 
@@ -171,7 +175,7 @@ every child should leave the school with is enough.
 1. Real testimonials, with permission. Three good ones beat ten vague ones —
    ask a parent to describe the change they've seen in their child.
 2. The principal's biography.
-3. Founding year, founder name, and how long the school has run.
+3. Sally Wild's biography, if she would like one on the site.
 4. Actual venue names and addresses.
 5. Confirmation of the safeguarding statements (DBS, first aid, sign-in and
    collection procedure) — these are marked editable because they must be

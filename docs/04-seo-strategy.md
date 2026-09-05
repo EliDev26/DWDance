@@ -43,9 +43,9 @@ All of the following is already implemented in the HTML.
 ### About Us — `about.html`
 
 * **Title** — `About Our Dance School in Stretford, Manchester | DWD Dance`
-* **Meta description** — *Meet Donelon Wild School of Dance: our story, our teaching philosophy, NATD examination training, performance opportunities and our commitment to a safe, supportive environment.*
-* **H1** — A dance school with a long memory and an open door
-* **H2s** — Built on teaching, not on numbers · How we teach — and why · NATD examination training · Opportunities to perform · A safe and supportive environment · Miss Bethany · What parents and students say
+* **Meta description** — *Founded in Stretford in 2016 by Bethany Donelon and Sally Wild. Our story, teaching philosophy, NATD examination training, performances and our commitment to a safe, supportive environment.*
+* **H1** — The school Bethany and Sally built
+* **H2s** — Built on teaching, not on numbers · How we teach — and why · NATD examination training · Opportunities to perform · A safe and supportive environment · Miss Bethany Donelon · What parents and students say
 * **Primary keyword** — dance school Stretford
 * **Secondary** — NATD dance school Manchester, safe dance classes for children Trafford
 
@@ -124,7 +124,7 @@ Beyond the website, in priority order:
    directories. Inconsistency is the most common local-SEO problem.
 3. **Structured data** — already implemented:
    * `LocalBusiness` + `DanceSchool` on the home page, with `areaServed` for
-     all four towns
+     all four towns, plus `foundingDate` (2016) and both founders
    * `WebSite`
    * `FAQPage` on Classes (eligible for FAQ rich results)
    * `BreadcrumbList` on Classes

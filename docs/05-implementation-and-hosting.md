@@ -12,7 +12,7 @@
 | 2 | Current timetable: day, time, class, ages, venue | `classes.html` → Weekly timetable |
 | 3 | Venue names and full addresses with postcodes | `contact.html` → Where we teach |
 | 4 | Principal biography, training, qualifications | `about.html` → Meet the principal |
-| 5 | Founding year and founder name | `about.html` → Our story |
+| 5 | Sally Wild biography (optional) | `about.html` → Meet the principal |
 | 6 | 3–6 testimonials, with written permission | `index.html`, `about.html` |
 | 7 | Uniform requirements per class and style | `store.html` → Uniform by class |
 | 8 | Confirm safeguarding statements are accurate | `about.html` → Safe and supportive |

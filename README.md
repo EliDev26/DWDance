@@ -43,7 +43,8 @@ page itself. Search the HTML for `class="editable"` to find each one.
 1. **Prices** — `classes.html`, the "Fees" section.
 2. **Timetable** — `classes.html`, the "Weekly timetable" table.
 3. **Venue addresses** — `contact.html`, "Where we teach".
-4. **Principal biography** — `about.html`, "Meet the principal".
+4. **Principal biography** — `about.html`, "Meet the principal" (and Sally
+   Wild's paragraph, or delete it).
 5. **Testimonials** — real quotes, with each family's permission, on
    `index.html` and `about.html`.
 6. **Uniform lists and sizing** — `store.html`.
