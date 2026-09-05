@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Tap">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#E7C3C6"/><stop offset="1" stop-color="#F2DCDC"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#g)"/>
+  <g fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="2">
+    <circle cx="400" cy="250" r="42"/>
+    <path d="M400 292 v66 l-37 60 M400 333 l37 60 M334 285 h133"/>
+  </g>
+  <text x="400" y="515" text-anchor="middle" font-family="Georgia, serif" font-size="27" fill="#FFFFFF" fill-opacity=".92">Tap</text>
+  <text x="400" y="550" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="17" fill="#FFFFFF" fill-opacity=".7">Replace: 1200x900 WebP</text>
+</svg>
