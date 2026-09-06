@@ -19,7 +19,8 @@ build step, no framework and no server-side code.
 ├── privacy.html          Privacy Policy (template — review before publishing)
 ├── cookies.html          Cookies Policy (template — review before publishing)
 ├── 404.html              Not-found page
-├── robots.txt            Search engine directives
+├── robots.txt            Search engine + AI crawler directives
+├── llms.txt              Plain-text site summary for AI assistants
 ├── sitemap.xml           XML sitemap
 ├── site.webmanifest      Icons and theme colour
 ├── .htaccess             Optional Apache caching/redirect rules
@@ -84,6 +85,7 @@ page itself. Search the HTML for `class="editable"` to find each one.
 | `docs/06-future-enhancements.md` | What to add next, in priority order |
 | `docs/07-owners-guide.md` | How to make everyday edits without breaking anything |
 | `docs/08-security.md` | Security review against the 20-point checklist |
+| `docs/09-ai-discoverability.md` | Being found and quoted by AI assistants |
 
 ---
 
