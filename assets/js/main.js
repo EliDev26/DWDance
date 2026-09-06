@@ -65,13 +65,19 @@
 
   /* ------------------------------------------------------- 3. Accordions */
   (function accordions() {
+    // Panels ship expanded in the HTML so that crawlers (and anyone without
+    // JS) get every answer. Collapse them here, now that we can reopen them.
+    function setOpen(btn, panel, open) {
+      btn.setAttribute('aria-expanded', String(open));
+      panel.classList.toggle('is-open', open);
+    }
+
     $$('.accordion__btn').forEach(function (btn) {
       var panel = document.getElementById(btn.getAttribute('aria-controls'));
       if (!panel) return;
+      setOpen(btn, panel, false);
       btn.addEventListener('click', function () {
-        var open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        panel.hidden = open;
+        setOpen(btn, panel, btn.getAttribute('aria-expanded') !== 'true');
       });
     });
 
@@ -81,7 +87,7 @@
       var btn = target && target.classList.contains('accordion__panel')
         ? document.querySelector('[aria-controls="' + target.id + '"]')
         : null;
-      if (btn) { btn.setAttribute('aria-expanded', 'true'); target.hidden = false; }
+      if (btn) setOpen(btn, target, true);
     }
   }());
 

@@ -680,7 +680,13 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .accordion__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
 .accordion__btn[aria-expanded="true"] .accordion__icon::after { opacity: 0; transform: translate(-50%, -50%) rotate(0); }
 .accordion__panel { padding: 0 0 var(--s-5); max-width: 68ch; color: var(--text-muted); }
-.accordion__panel[hidden] { display: none; }
+
+/* Accordions collapse only when JS can reopen them. Without JS — which is how
+   most AI and search crawlers read the page — every answer stays visible and
+   in the extractable text. The .js class is set inline before first paint, so
+   there is no flash of expanded content for real visitors. */
+.js .accordion__panel { display: none; }
+.js .accordion__panel.is-open { display: block; }
 
 /* 5.11 Pricing ----------------------------------------------------------- */
 .price-grid { display: grid; gap: var(--s-5); }
@@ -721,6 +727,23 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 /* 5.12 Timetable table --------------------------------------------------- */
 .table-scroll { max-width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: var(--r-md); }
 table.data { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: var(--fs-sm); background: var(--c-white); }
+
+/* Narrow tables (2-3 short columns, often inside a half-width card) do not
+   need the wide minimum, which would force needless horizontal scrolling. */
+table.data--compact { min-width: 0; }
+table.data--compact th, table.data--compact td { padding: var(--s-3); }
+
+/* A two-column key/value table reads better stacked than squeezed. It sits in
+   a half-width card from 40em up, so the box stays narrow (roughly 200-340px)
+   all the way to 64em — stack across that whole range, not just on phones. */
+@media (max-width: 63.99em) {
+  table.data--stack, table.data--stack tbody, table.data--stack tr,
+  table.data--stack th, table.data--stack td { display: block; width: auto; }
+  table.data--stack tr { padding: var(--s-3) var(--s-1); border-bottom: 1px solid var(--border); }
+  table.data--stack tr:last-child { border-bottom: 0; }
+  table.data--stack th, table.data--stack td { padding: 0; border-bottom: 0; }
+  table.data--stack td { margin-top: var(--s-1); color: var(--text-muted); }
+}
 table.data caption { padding: var(--s-4); text-align: left; color: var(--text-muted); font-size: var(--fs-sm); }
 table.data th, table.data td { padding: var(--s-3) var(--s-4); text-align: left; border-bottom: 1px solid var(--border); }
 table.data thead th { background: var(--c-blush-50); font-weight: 600; color: var(--text-strong); white-space: nowrap; }
@@ -963,3 +986,18 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .items-start  { align-items: start; }
 .stack-rows   { flex-direction: column; gap: var(--s-1); }
 .centre-panel { min-height: 52vh; display: grid; place-items: center; }
+
+/* At-a-glance facts — dense, scannable, and easy for machines to extract ---- */
+.facts { display: grid; gap: var(--s-4); margin-top: var(--s-5); }
+@media (min-width: 40em) { .facts { grid-template-columns: repeat(2, 1fr); gap: var(--s-4) var(--s-6); } }
+@media (min-width: 64em) { .facts { grid-template-columns: repeat(3, 1fr); } }
+.facts > div {
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-blush-200);
+}
+.facts dt {
+  font-size: var(--fs-xs); font-weight: 600;
+  letter-spacing: var(--ls-wide); text-transform: uppercase;
+  color: var(--c-gold-700);
+}
+.facts dd { margin: var(--s-2) 0 0; font-size: var(--fs-sm); color: var(--text); }

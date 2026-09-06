@@ -1,4 +1,71 @@
+# Donelon Wild School of Dance — https://www.dwdance.co.uk
+# We want this site read, quoted and recommended. Everything is public.
+
 User-agent: *
+Allow: /
+Disallow: /docs/
+
+# ---------------------------------------------------------------------------
+# AI assistants and answer engines — explicitly welcome.
+# These are listed by name so intent is unambiguous even if a crawler's
+# default behaviour changes. If you ever want to opt out of AI training,
+# change Allow to Disallow for the relevant agent below.
+# ---------------------------------------------------------------------------
+
+# OpenAI / ChatGPT
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: anthropic-ai
+Allow: /
+
+# Google — Google-Extended governs Gemini and AI Overviews
+User-agent: Google-Extended
+Allow: /
+User-agent: Googlebot
+Allow: /
+
+# Microsoft / Copilot
+User-agent: Bingbot
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Apple Intelligence / Siri
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+# Others
+User-agent: Amazonbot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: CCBot
+Allow: /
+User-agent: cohere-ai
+Allow: /
+User-agent: YouBot
 Allow: /
 
 Sitemap: https://www.dwdance.co.uk/sitemap.xml
