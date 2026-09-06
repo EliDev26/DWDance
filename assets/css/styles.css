@@ -727,6 +727,23 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 /* 5.12 Timetable table --------------------------------------------------- */
 .table-scroll { max-width: 100%; min-width: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; border: 1px solid var(--border); border-radius: var(--r-md); }
 table.data { width: 100%; min-width: 34rem; border-collapse: collapse; font-size: var(--fs-sm); background: var(--c-white); }
+
+/* Narrow tables (2-3 short columns, often inside a half-width card) do not
+   need the wide minimum, which would force needless horizontal scrolling. */
+table.data--compact { min-width: 0; }
+table.data--compact th, table.data--compact td { padding: var(--s-3); }
+
+/* A two-column key/value table reads better stacked than squeezed. It sits in
+   a half-width card from 40em up, so the box stays narrow (roughly 200-340px)
+   all the way to 64em — stack across that whole range, not just on phones. */
+@media (max-width: 63.99em) {
+  table.data--stack, table.data--stack tbody, table.data--stack tr,
+  table.data--stack th, table.data--stack td { display: block; width: auto; }
+  table.data--stack tr { padding: var(--s-3) var(--s-1); border-bottom: 1px solid var(--border); }
+  table.data--stack tr:last-child { border-bottom: 0; }
+  table.data--stack th, table.data--stack td { padding: 0; border-bottom: 0; }
+  table.data--stack td { margin-top: var(--s-1); color: var(--text-muted); }
+}
 table.data caption { padding: var(--s-4); text-align: left; color: var(--text-muted); font-size: var(--fs-sm); }
 table.data th, table.data td { padding: var(--s-3) var(--s-4); text-align: left; border-bottom: 1px solid var(--border); }
 table.data thead th { background: var(--c-blush-50); font-weight: 600; color: var(--text-strong); white-space: nowrap; }
