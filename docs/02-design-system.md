@@ -126,11 +126,24 @@ Fluid, using `clamp()`, from a 1.200 ratio on mobile to 1.250 on desktop:
 * Container: `1160px` max, `24px` gutters on mobile, `32px` from 768px.
 * Narrow container for prose: `760px`.
 * Grid gaps: `24px` mobile, `32px` from 1024px.
-* Radii: `6px` inputs · `12px` cards · `20px` hero media · pill buttons.
+* Radii: **two surface radii only** — `12px` (`--r-md`) for every surface
+  (cards, inputs, media, alerts, tables) and pill for buttons. `--r-detail`
+  (`3px`) is for hairline touches — the focus ring and the placeholder
+  highlight — and must never be used on a surface.
 
-Three shadow levels only (`--shadow-sm/md/lg`), all warm-tinted rather than
-neutral black, and all very soft. Depth is used to separate a card from its
-background, never for decoration.
+Three shadow levels (`--shadow-sm/md/lg`), all warm-tinted rather than neutral
+black, and all very soft.
+
+**Border or shadow, never both.** A card is separated from the page by a single
+hairline border and rests completely flat; the shadow appears only on hover, so
+depth actually means something. The remaining resting shadows are deliberate and
+few: the hero image, the hero's floating badge, framed photographs and primary
+buttons.
+
+**One hairline colour.** Structural borders on white use `--border`
+(`#E4DEDB`). The blush hairline survives in exactly two places — the page-hero
+and CTA-band edges — where it sits on a blush ground and a grey line would read
+as cold.
 
 ---
 
@@ -145,7 +158,8 @@ Every component below exists in `styles.css` and is used on at least two pages.
 | Mobile nav | `.nav-toggle` + `.site-nav` | Labelled button, Escape/outside-click closes, focus returns |
 | Anchor sub-nav | `.subnav` | Horizontally scrollable pills, long pages only |
 | Button | `.btn` + `--primary` `--secondary` `--ghost` `--gold` `--lg` `--block` | 48px min height (56px large) |
-| Card | `.card` + `--media` `--feature` `--link` | Flex column so footers align across a row |
+| Card | `.card` + `--media` `--feature` `--link` | Flex column so footers align across a row. Hairline border, no resting shadow |
+| Card title | `.card__title` | Fixed at `--fs-lg` so an `h2` and an `h3` card title render identically |
 | Icon badge | `.card__icon` | 48px circle, blush ground, 24px stroke icon |
 | Pill | `.pill` + `--gold` `--neutral` | Age ranges, levels, tags |
 | Meta list | `.meta-list` | `dl` for styles / exams / uniform |
@@ -162,7 +176,7 @@ Every component below exists in `styles.css` and is used on at least two pages.
 | Contact tile | `.contact-tile` | Whole tile is the tap target for call/email |
 | CTA band | `.cta-band` | Blush→gold gradient, closes most pages |
 | Store banner | `.store-banner` | Charcoal panel — the one dark element, used for emphasis |
-| Badge strip | `.badge-strip` | Accreditation row under the hero |
+| Trust badges | `.badge-row` | Four accreditation items in a real grid, so the fourth never orphans onto its own row |
 | Footer | `.site-footer` | 4 columns → 3 → 1; logo on the charcoal ground, social row horizontal |
 | Portrait image | `.img-portrait` | Uncropped poster/collage artwork in a split column |
 | Cookie bar | `.cookie-bar` | Fixed, dismissed choice stored locally |

@@ -78,7 +78,10 @@
   --section-y: clamp(3rem, 2rem + 5vw, 6rem);
 
   /* Radii, shadow, layout ------------------------------------------------ */
-  --r-sm: 6px;  --r-md: 12px;  --r-lg: 20px;  --r-pill: 999px;
+  /* Two surface radii only — everything structural is --r-md; buttons and
+     pills are --r-pill. --r-detail is for hairline touches (focus ring,
+     placeholder highlight), never for a surface. */
+  --r-md: 12px;  --r-pill: 999px;  --r-detail: 3px;
 
   --shadow-sm: 0 1px 2px rgba(43, 39, 41, 0.06),
                0 2px 6px rgba(43, 39, 41, 0.04);
@@ -156,7 +159,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 :focus-visible {
   outline: 3px solid var(--c-rose-600);
   outline-offset: 3px;
-  border-radius: 3px;
+  border-radius: var(--r-detail);
 }
 
 /* Skip link ------------------------------------------------------------- */
@@ -168,7 +171,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   padding: var(--s-3) var(--s-5);
   background: var(--c-ink-900);
   color: var(--c-white);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   font-weight: 600;
   text-decoration: none;
   transition: top var(--dur) var(--ease);
@@ -341,7 +344,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .brand { display: inline-flex; align-items: center; gap: var(--s-3); text-decoration: none; }
 .brand__mark {
   width: 44px; height: 44px; flex: none;
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   background: var(--c-ink-900);
   object-fit: contain;
 }
@@ -368,7 +371,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   padding: var(--s-2) var(--s-3);
   background: transparent;
   border: 1px solid var(--border);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   font-size: var(--fs-sm);
   font-weight: 600;
   color: var(--text-strong);
@@ -383,7 +386,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   left: 0;
   width: 100%; height: 2px;
   background: var(--text-strong);
-  border-radius: 2px;
+  border-radius: var(--r-detail);
   transition: transform var(--dur) var(--ease), opacity var(--dur) var(--ease);
 }
 .nav-toggle__bars::before { top: 0; }
@@ -409,7 +412,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .site-nav__link {
   display: block;
   padding: var(--s-3) var(--s-2);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   font-weight: 500;
   color: var(--text-strong);
   text-decoration: none;
@@ -463,10 +466,11 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   background: var(--c-white);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  box-shadow: var(--shadow-sm);
+  /* No resting shadow: a hairline border already separates the card from the
+     page. Depth is reserved for hover, so it means something. */
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
-.card--link:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--c-blush-300); }
+.card--link:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); border-color: var(--c-blush-300); }
 .card__icon {
   width: 48px; height: 48px;
   display: grid; place-items: center;
@@ -476,7 +480,12 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   color: var(--c-rose-700);
 }
 .card__icon svg { width: 24px; height: 24px; }
-.card__title { margin-bottom: var(--s-3); }
+.card__title {
+  margin-bottom: var(--s-3);
+  /* Fixed size so an h2 and an h3 card title look identical. */
+  font-size: var(--fs-lg);
+  line-height: var(--lh-snug);
+}
 .card__body { color: var(--text-muted); flex: 1 1 auto; }
 .card__foot { margin-top: var(--s-5); }
 
@@ -484,7 +493,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .card--media img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 .card--media .card__inner { padding: var(--s-6); display: flex; flex-direction: column; flex: 1; }
 
-.card--feature { background: var(--c-blush-50); border-color: var(--c-blush-200); }
+.card--feature { background: var(--c-blush-50); }
 
 /* 5.5 Pills / meta ------------------------------------------------------- */
 .pill {
@@ -551,7 +560,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center 35%;   /* keeps faces in frame on tighter crops */
-  border-radius: var(--r-lg);
+  border-radius: var(--r-md);
   box-shadow: var(--shadow-lg);
 }
 
@@ -602,7 +611,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 /* 5.8 Steps -------------------------------------------------------------- */
 .steps { counter-reset: step; display: grid; gap: var(--s-5); }
 @media (min-width: 48em) { .steps { grid-template-columns: repeat(3, 1fr); gap: var(--s-6); } }
-.step { position: relative; padding-top: var(--s-6); border-top: 2px solid var(--c-blush-200); }
+.step { position: relative; padding-top: var(--s-6); border-top: 2px solid var(--border); }
 .step::before {
   counter-increment: step;
   content: counter(step);
@@ -610,7 +619,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   display: grid; place-items: center;
   width: 40px; height: 40px;
   background: var(--c-white);
-  border: 2px solid var(--c-blush-200);
+  border: 2px solid var(--border);
   border-radius: var(--r-pill);
   font-family: var(--font-display);
   font-size: 1.125rem;
@@ -624,7 +633,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   display: flex; flex-direction: column; height: 100%;
   padding: var(--s-6);
   background: var(--c-white);
-  border: 1px solid var(--c-blush-200);
+  border: 1px solid var(--border);
   border-radius: var(--r-md);
 }
 .quote__stars { display: flex; gap: 2px; margin-bottom: var(--s-4); color: var(--c-gold-500); }
@@ -704,7 +713,6 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .price-card--highlight {
   border-color: var(--c-rose-500);
   border-width: 2px;
-  box-shadow: var(--shadow-md);
 }
 .price-card__label { font-weight: 600; color: var(--text-strong); }
 .price-card__amount {
@@ -720,7 +728,7 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .editable {
   background: #FFF8E1;
   box-shadow: 0 0 0 1px #E7D9A8 inset;
-  border-radius: 4px;
+  border-radius: var(--r-detail);
   padding: 0 0.25em;
 }
 
@@ -764,7 +772,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
   padding: var(--s-3) var(--s-4);
   background: var(--c-white);
   border: 1px solid var(--c-ink-300);
-  border-radius: var(--r-sm);
+  border-radius: var(--r-md);
   transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
 }
 .textarea { min-height: 8rem; resize: vertical; }
@@ -786,7 +794,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 
 .form-note { font-size: var(--fs-xs); color: var(--text-muted); }
 
-.alert { padding: var(--s-4) var(--s-5); border-radius: var(--r-sm); font-size: var(--fs-sm); }
+.alert { padding: var(--s-4) var(--s-5); border-radius: var(--r-md); font-size: var(--fs-sm); }
 .alert--success { background: var(--c-success-50); color: var(--c-success-700); border: 1px solid #BFDCCB; }
 .alert--error { background: var(--c-error-50); color: var(--c-error-700); border: 1px solid #EFC7C7; }
 .alert--info { background: var(--c-blush-50); color: var(--c-rose-700); border: 1px solid var(--c-blush-200); }
@@ -825,7 +833,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
   align-items: center;
   padding: var(--s-7);
   background: var(--c-ink-900);
-  border-radius: var(--r-lg);
+  border-radius: var(--r-md);
   color: #EFE9E7;
 }
 @media (min-width: 62em) { .store-banner { grid-template-columns: 1.2fr 0.8fr; padding: var(--s-8); } }
@@ -835,17 +843,18 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .store-banner__actions { display: flex; flex-wrap: wrap; gap: var(--s-3); }
 @media (min-width: 62em) { .store-banner__actions { justify-content: flex-end; } }
 
-/* 5.17 Logo / accreditation strip ---------------------------------------- */
-.badge-strip {
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-  gap: var(--s-4) var(--s-7);
-  padding: var(--s-5);
-  background: var(--c-white);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
+/* 5.17 Trust badges — a grid, so four items never wrap 3 + 1 -------------- */
+.badge-row {
+  display: grid;
+  gap: var(--s-4) var(--s-6);
+  padding-bottom: var(--s-6);
+  margin-bottom: var(--s-6);
+  border-bottom: 1px solid var(--border);
 }
-.badge-strip__item { display: flex; align-items: center; gap: var(--s-3); font-size: var(--fs-sm); color: var(--text-muted); }
-.badge-strip__item svg { width: 26px; height: 26px; color: var(--c-gold-700); }
+@media (min-width: 40em) { .badge-row { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 64em) { .badge-row { grid-template-columns: repeat(4, 1fr); } }
+.badge-row li { display: flex; align-items: center; gap: var(--s-3); font-size: var(--fs-sm); color: var(--text-muted); }
+.badge-row svg { width: 24px; height: 24px; flex: none; color: var(--c-gold-700); }
 
 /* 5.18 Footer ------------------------------------------------------------ */
 .site-footer {
@@ -993,7 +1002,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 @media (min-width: 64em) { .facts { grid-template-columns: repeat(3, 1fr); } }
 .facts > div {
   padding-top: var(--s-3);
-  border-top: 1px solid var(--c-blush-200);
+  border-top: 1px solid var(--border);
 }
 .facts dt {
   font-size: var(--fs-xs); font-weight: 600;
