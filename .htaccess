@@ -1,5 +1,5 @@
 # =============================================================================
-# DWD Dance — Apache configuration for One.com static hosting
+# DW Dance — Apache configuration for One.com static hosting
 # Optional. If One.com ignores or rejects any directive, delete that block —
 # the site works correctly without this file.
 # =============================================================================

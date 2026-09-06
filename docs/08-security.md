@@ -252,7 +252,7 @@ meta CSP is doing the work alone.
 ## 18. Secure cookies — N/A
 
 **The site sets no cookies at all.** The cookie banner records the visitor's
-choice in `localStorage` (`dwd-cookie-choice`), which never leaves the browser
+choice in `localStorage` (`dw-cookie-choice`), which never leaves the browser
 and is never transmitted. Every read and write is wrapped in `try/catch` so
 blocked storage degrades cleanly.
 

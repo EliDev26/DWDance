@@ -99,7 +99,7 @@ one.
 In the footer of every page, find:
 
 ```html
-<li><a href="#" aria-label="DWD Dance on Facebook" rel="noopener">
+<li><a href="#" aria-label="DW Dance on Facebook" rel="noopener">
 ```
 
 Replace `#` with your full Facebook URL. Do the same for Instagram. If you

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   DWD Dance — site behaviour
+   DW Dance — site behaviour
    Vanilla ES5-safe-ish ES2015. No dependencies. Deferred load.
    Everything degrades gracefully if JS is unavailable.
    ========================================================================== */
@@ -109,7 +109,7 @@
   (function cookies() {
     var bar = $('#cookie-bar');
     if (!bar) return;
-    var KEY = 'dwd-cookie-choice';
+    var KEY = 'dw-cookie-choice';
     var stored = null;
     try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = 'skip'; }
     if (stored) return;                       // already answered (or storage blocked)

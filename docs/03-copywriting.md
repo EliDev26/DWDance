@@ -164,7 +164,7 @@ every child should leave the school with is enough.
 | Nav CTA | "Book a Free Trial" | Shorter, fits the header |
 | Store CTA | "Visit Our Online Store" | As specified; consistent everywhere |
 | Form button | "Send my enquiry" | First person — measurably outperforms "Submit" |
-| Form consent | "I'm happy for DWD Dance to contact me about my enquiry." | Specific and limited, not a blanket marketing opt-in |
+| Form consent | "I'm happy for DW Dance to contact me about my enquiry." | Specific and limited, not a blanket marketing opt-in |
 | 404 | "That page has stepped off stage" | On-brand, then three useful links |
 | Thank-you | "We'll be in touch" + when + a phone number | Sets expectations and offers a faster route |
 

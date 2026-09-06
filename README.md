@@ -54,7 +54,7 @@ page itself. Search the HTML for `class="editable"` to find each one.
    |---|---|---|
    | `logo.png` | Header, footer, browser tab | Square, ~600px, black ground |
    | `hero.jpg` | Home hero | 1600 × 1200 (4:3) |
-   | `welcome-scholarships.jpg` | Home "Welcome to DWD Dance" | 800 × 1200 (2:3 portrait) |
+   | `welcome-scholarships.jpg` | Home "Welcome to DW Dance" | 800 × 1200 (2:3 portrait) |
    | `ballet.jpg` | Home + Classes ballet card | 1200 × 900 (4:3) |
    | `preschool.jpg` | Home + About NATD section | 1000 × 1000 (square) |
    | `performance.jpg` | About show & performance | 1600 × 1200 (4:3) |

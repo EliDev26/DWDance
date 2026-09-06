@@ -12,19 +12,21 @@ All of the following is already implemented in the HTML.
 
 ### Home — `index.html`
 
-* **Title** (68 chars)
-  `Dance Classes for Children in Stretford & Manchester | Donelon Wild School of Dance`
-* **Meta description** (155 chars)
-  *Ballet, tap and modern dance classes for children aged 3-18 in Stretford, Flixton, Urmston and Davyhulme. NATD exams, shows and a friendly, safe environment. Book a free taster class.*
+* **Title** (61 chars)
+  `Children's Dance Classes in Stretford & Manchester | DW Dance`
+* **Meta description** (142 chars)
+  *Ballet, tap and modern classes for children aged 3-18 in Stretford, Flixton, Urmston and Davyhulme. NATD exams, shows and a free taster class.*
 * **H1** — Where children find their confidence, one step at a time
+* **Note** — every title is now within ~60 characters and every description
+  within ~155, so neither is truncated in Google's results.
 * **H2s** — A dance school built around the child · Everything you'd want for your child's first dance class · Three disciplines, one strong foundation · Classes grouped by age and stage · NATD examinations · Performance opportunities all year round · What parents say · Uniform, shoes and accessories · Three steps to your child's first class · Ready to see your child dance? · Questions?
 * **Primary keyword** — dance classes Stretford
 * **Secondary** — children's dance school Manchester, dance classes near me, ballet classes Trafford
 
 ### Classes & Pricing — `classes.html`
 
-* **Title** — `Ballet, Tap & Modern Classes & Prices | DWD Dance, Stretford`
-* **Meta description** — *Children's ballet, tap and modern classes in Stretford, Flixton, Urmston and Davyhulme. Class descriptions by age 3-18, NATD grades, fees, sibling discount and FAQs.*
+* **Title** — `Ballet, Tap & Modern Classes & Prices | DW Dance, Stretford`
+* **Meta description** — *Children's ballet, tap and modern classes in Stretford, Flixton, Urmston and Davyhulme. Class details by age 3-18, NATD grades, fees and FAQs.*
 * **H1** — Classes & Pricing
 * **H2s** — How our classes work · Four stages, from first steps to student grade · Ballet, tap and modern — and what each one is for · Weekly timetable · Clear, simple pricing · Classes & pricing FAQs
 * **H3s** — Pre-School Dance · Junior Classes · Intermediate Classes · Senior Classes · Ballet · Tap · Modern · plus each FAQ question
@@ -33,8 +35,8 @@ All of the following is already implemented in the HTML.
 
 ### Store — `store.html`
 
-* **Title** — `Dancewear Store – Uniform, Shoes & Accessories | DWD Dance`
-* **Meta description** — *Order official DWD Dance uniform, ballet and tap shoes, and accessories from our online dancewear store. Uniform lists by class, sizing guidance and delivery to your door.*
+* **Title** — `Dancewear Store – Uniform, Shoes & Accessories | DW Dance`
+* **Meta description** — *Order official DW Dance uniform, ballet and tap shoes and accessories from our online store. Uniform lists by class, sizing guidance and delivery.*
 * **H1** — Everything your dancer needs, in one place
 * **H2s** — Why order through our store? · Featured dancewear categories · Uniform by class · Choosing the right shoes · Size guide · Ready to order? · Dancewear FAQs
 * **Primary keyword** — dancewear Manchester
@@ -42,8 +44,8 @@ All of the following is already implemented in the HTML.
 
 ### About Us — `about.html`
 
-* **Title** — `About Our Dance School in Stretford, Manchester | DWD Dance`
-* **Meta description** — *Founded in Stretford in 2016 by Bethany Donelon and Sally Wild. Our story, teaching philosophy, NATD examination training, performances and our commitment to a safe, supportive environment.*
+* **Title** — `About Our Dance School in Stretford, Manchester | DW Dance`
+* **Meta description** — *Founded in Stretford in 2016 by Bethany Donelon and Sally Wild. Our story, teaching, NATD training, performances and a safe, supportive environment.*
 * **H1** — The school Bethany and Sally built
 * **H2s** — Built on teaching, not on numbers · How we teach — and why · NATD examination training · Opportunities to perform · A safe and supportive environment · Miss Bethany Donelon · What parents and students say
 * **Primary keyword** — dance school Stretford
@@ -51,8 +53,8 @@ All of the following is already implemented in the HTML.
 
 ### Contact — `contact.html`
 
-* **Title** — `Contact Us – Book a Free Taster Class | DWD Dance, Stretford`
-* **Meta description** — *Enquire about children's ballet, tap and modern classes in Stretford, Flixton, Urmston and Davyhulme. Call 07910 603360, email miss.bethany@dwdance.co.uk or send an enquiry.*
+* **Title** — `Contact Us – Book a Free Taster Class | DW Dance, Stretford`
+* **Meta description** — *Enquire about children's dance classes in Stretford, Flixton, Urmston and Davyhulme. Call 07910 603360 or send an enquiry for a free taster class.*
 * **H1** — Book a free taster class
 * **H2s** — Send an enquiry · Where we teach · Quick answers · Prefer to talk it through?
 * **Primary keyword** — dance classes near me Urmston
