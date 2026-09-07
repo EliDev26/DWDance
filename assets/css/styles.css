@@ -468,10 +468,6 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .card--link:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--c-blush-300); }
-/* Cards that carry only an icon and a title read better centred. */
-.card:not(:has(.card__body)):not(:has(p)) { text-align: center; }
-.card:not(:has(.card__body)):not(:has(p)) .card__icon { margin-inline: auto; }
-
 .card__icon {
   width: 48px; height: 48px;
   display: grid; place-items: center;
@@ -490,6 +486,10 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .card--media .card__inner { padding: var(--s-6); display: flex; flex-direction: column; flex: 1; }
 
 .card--feature { background: var(--c-blush-50); border-color: var(--c-blush-200); }
+
+/* A pill used on its own inside a card is a flex child, so stop it stretching
+   to the full width of the card. */
+.card > .pill, .card__inner > .pill { align-self: flex-start; }
 
 /* 5.5 Pills / meta ------------------------------------------------------- */
 .pill {
@@ -905,7 +905,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 
 /* 5.20 Anchor sub-nav ---------------------------------------------------- */
 .subnav { border-bottom: 1px solid var(--border); background: var(--c-white); }
-.subnav ul { display: flex; gap: var(--s-2); overflow-x: auto; padding-block: var(--s-3); -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+.subnav ul { display: flex; flex-wrap: wrap; gap: var(--s-2); padding-block: var(--s-3); }
 .subnav a {
   display: inline-block; white-space: nowrap;
   padding: var(--s-2) var(--s-4);
@@ -935,6 +935,46 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .prose ul { display: grid; gap: var(--s-2); padding-left: var(--s-5); }
 .prose ul li { list-style: disc; }
 .rule { height: 1px; background: var(--border); border: 0; margin-block: var(--s-7); }
+
+/* --------------------------------------------------------------------------
+   6.x SMALL SCREENS
+   The layout is mobile-first, so these only tighten what is too generous on a
+   phone: card and panel padding, the gaps between blocks, and tap targets.
+   -------------------------------------------------------------------------- */
+@media (max-width: 47.99em) {
+  /* Cards and panels: less air, so more of the content fits on one screen. */
+  .card:not(.card--media) { padding: var(--s-5); }
+  .card--media .card__inner { padding: var(--s-5); }
+  .quote { padding: var(--s-5); }
+  .section-head { margin-bottom: var(--s-6); }
+
+  /* The fact lists run long on a phone — tighten the rhythm between rows. */
+  .facts { gap: var(--s-3); }
+  .facts dd { margin-top: var(--s-1); }
+
+  /* Steps and grids sit closer together. */
+  .grid { gap: var(--s-4); }
+  .steps { gap: var(--s-6); }
+
+  /* Page headers do not need desktop-sized breathing room. */
+  .page-hero { padding-block: var(--s-6) var(--s-7); }
+
+  /* Tables: narrower cells so a four-column table still fits a 360px screen. */
+  table.data th, table.data td { padding: var(--s-2) var(--s-3); }
+  table.data { font-size: var(--fs-xs); }
+
+  /* Comfortable tap targets in the accordion and the sub-navigation. */
+  .accordion__btn { padding-block: var(--s-4); }
+  .subnav a { padding: var(--s-2) var(--s-3); }
+}
+
+/* Phones proper: one full-width button per row is easier to hit than two
+   half-width ones sitting side by side. */
+@media (max-width: 29.99em) {
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .btn-row .btn { width: 100%; }
+  .store-banner__actions .btn { width: 100%; }
+}
 
 /* --------------------------------------------------------------------------
    7. MOTION & PRINT
