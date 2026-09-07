@@ -41,14 +41,18 @@ CSS and JS.
 Everything that needs a real value is **highlighted in pale yellow** on the
 page itself. Search the HTML for `class="editable"` to find each one.
 
-1. **Prices** — `classes.html`, the "Fees" section.
-2. **Timetable** — `classes.html`, the "Weekly timetable" table.
-3. **Venue addresses** — `contact.html`, "Where we teach".
-4. **Principal biography** — `about.html`, "Meet the principal" (and Sally
-   Wild's paragraph, or delete it).
-5. **Testimonials** — real quotes, with each family's permission, on
+1. **Term dates** — `classes.html`, the "Term dates" section. This is the one
+   you will come back to each year; edit only the highlighted cells and the
+   "last updated" line.
+2. **Class times** — `classes.html`, the "When we teach" section, if the
+   Saturday pattern ever changes.
+3. **Teacher profiles** — `about.html`, "Meet the team" (three profiles;
+   delete the third card if it isn't needed).
+4. **Testimonials** — real quotes, with each family's permission, on
    `index.html` and `about.html`.
-6. **Uniform lists and sizing** — `store.html`.
+5. **Reply time** — `contact.html` and `thank-you.html`, "one to two days".
+6. **Store page** — `store.html` is now just a signpost to
+   ddw.mydancestore.co.uk; there is no uniform list to maintain.
 7. **Photography** — **every image is now a drop-in file.** Overwrite anything
    in `assets/img/` keeping the same filename, and no HTML needs editing:
    | File | Where it appears | Supply at |
@@ -57,12 +61,11 @@ page itself. Search the HTML for `class="editable"` to find each one.
    | `hero.jpg` | Home hero | 1600 × 1200 (4:3) |
    | `welcome-scholarships.jpg` | Home "Welcome to DW Dance" | 800 × 1200 (2:3 portrait) |
    | `ballet.jpg` | Home + Classes ballet card | 1200 × 900 (4:3) |
-   | `preschool.jpg` | Home + About NATD section | 1000 × 1000 (square) |
+   | `preschool.jpg` | Home NATD section | 1000 × 1000 (square) |
    | `performance.jpg` | About show & performance | 1600 × 1200 (4:3) |
    | `tap.jpg` `modern.jpg` | Style cards | 1200 × 900 (4:3) |
    | `studio.jpg` | About story | 1600 × 1067 (3:2) |
-   | `principal.jpg` | Meet the principal | 1000 × 1000 (square) |
-   | `store-*.jpg` (×4) | Store categories | 1000 × 1000 (square) |
+   | `principal.jpg` | Meet the team | 1000 × 1000 (square) |
    | `og-image.jpg` | Social sharing preview | 1200 × 630 |
    Each placeholder states its own size on the image itself.
 8. **Social links** — Facebook is live; add Instagram back if you want it.

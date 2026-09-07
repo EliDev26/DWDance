@@ -50,6 +50,7 @@
 
   /* Typography ----------------------------------------------------------- */
   --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-brand: "Cormorant Garamond", "Playfair Display", Georgia, serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
                "Helvetica Neue", Arial, sans-serif;
 
@@ -347,11 +348,11 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; }
 .brand__name {
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  font-weight: 600;
+  font-family: var(--font-brand);
+  font-size: 1.375rem;
+  font-weight: 700;
   color: var(--text-strong);
-  letter-spacing: var(--ls-tight);
+  letter-spacing: 0.01em;
 }
 .brand__tag {
   font-size: 0.6875rem;
@@ -467,6 +468,10 @@ strong, b { font-weight: 600; color: var(--text-strong); }
   transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur) var(--ease);
 }
 .card--link:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: var(--c-blush-300); }
+/* Cards that carry only an icon and a title read better centred. */
+.card:not(:has(.card__body)):not(:has(p)) { text-align: center; }
+.card:not(:has(.card__body)):not(:has(p)) .card__icon { margin-inline: auto; }
+
 .card__icon {
   width: 48px; height: 48px;
   display: grid; place-items: center;
@@ -867,7 +872,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .footer-col ul { display: grid; gap: var(--s-3); }
 
 .footer-brand__logo { width: 132px; height: auto; margin-bottom: var(--s-4); }
-.footer-brand__name { font-family: var(--font-display); font-size: var(--fs-lg); color: var(--c-white); }
+.footer-brand__name { font-family: var(--font-brand); font-size: var(--fs-lg); color: var(--c-white); }
 .footer-brand p { margin-top: var(--s-4); max-width: 34ch; }
 
 .footer-col .social-row { display: flex; flex-direction: row; flex-wrap: wrap;
