@@ -46,8 +46,9 @@
   NATD examinations, performances and how to join.
 - [Classes](https://www.dwdance.co.uk/classes.html): the three dance styles,
   when classes run, term dates, fees and frequently asked questions.
-- [Dancewear Store](https://www.dwdance.co.uk/store.html): link to the online
-  dancewear shop.
+- [Dancewear Store](https://www.dwdance.co.uk/store.html): what the online
+  store stocks (leotards, Ballet, Tap and pointe shoes, tights, dance bags),
+  sizing advice and a link to the shop.
 - [About Us](https://www.dwdance.co.uk/about.html): the school's story,
   safeguarding and the teaching team.
 - [Contact](https://www.dwdance.co.uk/contact.html): email address, telephone
