@@ -46,12 +46,12 @@ page itself. Search the HTML for `class="editable"` to find each one.
    "last updated" line.
 2. **Class times** — `classes.html`, the "When we teach" section, if the
    Saturday pattern ever changes.
-3. **Teacher profiles** — `about.html`, "Meet the team" (three profiles;
-   delete the third card if it isn't needed).
+3. **Teacher profiles** — `about.html`, "Meet the teachers" (three cards:
+   name, role, a short bio and a photo; delete the third if it isn't needed).
 4. **Testimonials** — real quotes, with each family's permission, on
    `index.html` and `about.html`.
 5. **Reply time** — `contact.html` and `thank-you.html`, "one to two days".
-6. **Store page** — `store.html` is now just a signpost to
+6. **Store page** — `store.html` is just a signpost to
    ddw.mydancestore.co.uk; there is no uniform list to maintain.
 7. **Photography** — **every image is now a drop-in file.** Overwrite anything
    in `assets/img/` keeping the same filename, and no HTML needs editing:
@@ -60,17 +60,18 @@ page itself. Search the HTML for `class="editable"` to find each one.
    | `logo.png` | Header, footer, browser tab | Square, ~600px, black ground |
    | `hero.jpg` | Home hero | 1600 × 1200 (4:3) |
    | `welcome-scholarships.jpg` | Home "Welcome to DW Dance" | 800 × 1200 (2:3 portrait) |
-   | `ballet.jpg` | Home + Classes ballet card | 1200 × 900 (4:3) |
-   | `preschool.jpg` | Home NATD section | 1000 × 1000 (square) |
-   | `performance.jpg` | About show & performance | 1600 × 1200 (4:3) |
-   | `tap.jpg` `modern.jpg` | Style cards | 1200 × 900 (4:3) |
+   | `ballet.jpg` `tap.jpg` `modern.jpg` | Home + Classes style cards | 1200 × 900 (4:3) |
    | `studio.jpg` | About story | 1600 × 1067 (3:2) |
-   | `principal.jpg` | Meet the team | 1000 × 1000 (square) |
+   | `teacher-1.jpg` `teacher-2.jpg` `teacher-3.jpg` | About "Meet the teachers" | 1000 × 1000 (square) |
    | `og-image.jpg` | Social sharing preview | 1200 × 630 |
+
+   `performance.jpg`, `preschool.jpg`, `principal.jpg` and the four
+   `store-*.jpg` files are left in place but are no longer used by any page.
    Each placeholder states its own size on the image itself.
 8. **Social links** — Facebook is live; add Instagram back if you want it.
-9. **Enquiry form** — wire it to a real inbox (instructions are in a comment
-   inside `contact.html`); until then it opens the parent's email app.
+9. **Enquiry form** — three fields only (name, email, subject). Wire it to a
+   real inbox (instructions are in a comment inside `contact.html`); until
+   then it opens the parent's email app.
 10. **Legal pages** — read `privacy.html` and `cookies.html` properly and
     adjust them to what you actually do.
 
