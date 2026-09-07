@@ -65,7 +65,7 @@
           <li><a class="site-nav__link" href="about.html" data-nav="about">About Us</a></li>
         </ul>
         <div class="site-nav__cta">
-          <a class="btn btn--primary" href="contact.html#enquiry">Contact Us</a>
+          <a class="btn btn--primary" href="contact.html#enquiry" aria-current="page">Contact Us</a>
         </div>
       </div>
     </nav>
@@ -137,6 +137,11 @@
           2. Set   action="https://YOUR-ENDPOINT"   method="post"
           3. Change data-mode="mailto" to data-mode="post"
           4. Point the _next / redirect field at thank-you.html
+          5. IMPORTANT — the Content-Security-Policy blocks posting
+             to anywhere but this site. Add the endpoint's origin to
+             form-action in TWO places or the form will fail
+             silently: the CSP <meta> at the top of this file, and
+             the CSP header in .htaccess.
         ==========================================================
       -->
       <form class="form mt-6" id="enquiry-form" data-mode="mailto" action="#" method="post" novalidate>
