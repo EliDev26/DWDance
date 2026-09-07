@@ -196,19 +196,12 @@
           return el ? (el.value || '').trim() : '';
         };
         var body = [
-          'Parent/guardian name: ' + get('name'),
+          'Name: ' + get('name'),
           'Email: ' + get('email'),
-          'Phone: ' + get('phone'),
-          "Child's first name: " + get('child_name'),
-          "Child's age: " + get('child_age'),
-          'Interested in: ' + get('interest'),
-          'Dance experience: ' + get('experience'),
-          '',
-          'Message:',
-          get('message')
+          'Subject: ' + get('subject')
         ].join('\n');
         window.location.href = 'mailto:miss.bethany@dwdance.co.uk'
-          + '?subject=' + encodeURIComponent('Class enquiry from ' + (get('name') || 'the website'))
+          + '?subject=' + encodeURIComponent(get('subject') || 'Website enquiry')
           + '&body=' + encodeURIComponent(body);
         if (status) {
           status.hidden = false;

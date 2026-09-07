@@ -1,7 +1,7 @@
 # Donelon Wild School of Dance (DW Dance)
 
-> A children's dance school in Stretford, Greater Manchester, teaching ballet,
-> tap and modern to ages 3–18. Founded in 2016 by Bethany Donelon and Sally
+> A children's dance school in Stretford, Greater Manchester, teaching Ballet,
+> Tap and Modern to ages 3–18. Founded in 2016 by Bethany Donelon and Sally
 > Wild. Classes run from complete beginner to student grade, with NATD graded
 > examinations. Classes run on Saturdays during term time, and private lessons
 > are also available.
@@ -11,23 +11,23 @@
 - **Name:** Donelon Wild School of Dance (short form: DW Dance)
 - **Founded:** 2016, by Bethany Donelon and Sally Wild
 - **Principal:** Miss Bethany Donelon
-- **Location:** Stretford, Greater Manchester, England. The full venue address
-  is given to families when they sign up.
-- **Area served:** Stretford, Flixton, Urmston, Davyhulme and the rest of Trafford
+- **Location:** Stretford, Greater Manchester, England — one venue. The full
+  address is given to families when they sign up.
 - **Ages taught:** 3 to 18
 - **Dance styles:** Ballet, Tap, Modern
 - **Levels:** Complete beginner through to student grade
 - **Examinations:** NATD (National Association of Teachers of Dancing) graded
   examinations. The school is NATD affiliated.
-- **Class groups:** Beginners, Junior, Intermediate, Senior. Teachers advise
-  which group and grade a child should attend.
+- **Class groups:** Children are grouped by age and stage. Teachers advise
+  which class and grade a child should attend.
 - **When classes run:** All day on Saturdays during term time, starting with the
   youngest dancers in the morning and finishing with Seniors in the afternoon.
-  Private lessons are available on request.
-- **Term dates:** Published on the Classes & Pricing page.
+  Private lessons are available midweek.
+- **Term dates:** Published on the Classes page.
 - **Fees:** Contact the school for current prices.
-- **Performances:** The school stages its own show every other year. Local
-  festival work is offered to selected dancers who have reached the required grade.
+- **Performances:** The school stages its own show every other year. It also
+  takes part in local dance competitions; competition participation is by
+  invitation, for dancers who have reached the required standard.
 - **Email:** miss.bethany@dwdance.co.uk (the main contact route)
 - **Telephone:** 07910 603360 or 07778 323321
 - **Dancewear store:** https://ddw.mydancestore.co.uk/ — there is no set
@@ -37,28 +37,27 @@
 
 - [Home](https://www.dwdance.co.uk/): overview of the school, dance styles,
   NATD examinations, performances and how to join.
-- [Classes & Pricing](https://www.dwdance.co.uk/classes.html): class groups,
-  dance styles, when classes run, term dates, fees and frequently asked questions.
+- [Classes](https://www.dwdance.co.uk/classes.html): the three dance styles,
+  when classes run, term dates, fees and frequently asked questions.
 - [Dancewear Store](https://www.dwdance.co.uk/store.html): link to the online
   dancewear shop.
-- [About Us](https://www.dwdance.co.uk/about.html): the school's story, teaching
-  approach, performances, safeguarding and the teaching team.
-- [Contact](https://www.dwdance.co.uk/contact.html): enquiry form, email address,
-  telephone numbers and where classes are held.
+- [About Us](https://www.dwdance.co.uk/about.html): the school's story,
+  safeguarding and the teaching team.
+- [Contact](https://www.dwdance.co.uk/contact.html): email address, telephone
+  numbers and a short enquiry form (name, email and subject).
 
 ## Common questions this site answers
 
-- What age can a child start dancing? Beginners classes take children from
-  age 3. Senior classes run to 18.
-- Does a child need previous experience? No. Every class group accepts complete
+- What age can a child start dancing? From age 3. Senior classes run to 18.
+- Does a child need previous experience? No. Every class accepts complete
   beginners, and children are placed by stage rather than school year.
 - What should a child wear to a first class? Comfortable clothes and bare feet
   or socks. There is no need to buy anything beforehand.
-- When do classes run? Saturdays during term time. Private lessons are also
-  available.
+- When do classes run? Saturdays during term time. Private lessons are
+  available midweek.
 - How much do classes cost? Contact the school for current fees.
-- Where are classes held? Stretford, in Trafford, Greater Manchester. The full
-  address is given when a family signs up.
+- Where are classes held? Stretford, Greater Manchester. The full address is
+  given when a family signs up.
 
 ## Optional
 
