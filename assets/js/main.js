@@ -202,7 +202,7 @@
           "Child's first name: " + get('child_name'),
           "Child's age: " + get('child_age'),
           'Interested in: ' + get('interest'),
-          'Preferred venue: ' + get('venue'),
+          'Dance experience: ' + get('experience'),
           '',
           'Message:',
           get('message')
