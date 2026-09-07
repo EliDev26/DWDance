@@ -538,17 +538,6 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 .hero__title { margin-bottom: var(--s-5); }
 .hero__title em { font-style: normal; color: var(--c-rose-600); }
 .hero__lede { font-size: var(--fs-md); color: var(--text-muted); max-width: 46ch; }
-.hero__actions { margin-top: var(--s-6); }
-.hero__trust {
-  display: flex; flex-wrap: wrap; gap: var(--s-3) var(--s-5);
-  margin-top: var(--s-6);
-  padding-top: var(--s-5);
-  border-top: 1px solid var(--c-blush-200);
-  font-size: var(--fs-sm);
-  color: var(--text-muted);
-}
-.hero__trust span { display: inline-flex; align-items: center; gap: var(--s-2); }
-.hero__trust svg { width: 18px; height: 18px; color: var(--c-gold-700); flex: none; }
 
 .hero__media { position: relative; }
 .hero__media img {
