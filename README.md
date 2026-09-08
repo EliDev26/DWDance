@@ -95,8 +95,11 @@ page itself. Search the HTML for `class="editable"` to find each one.
 
 ## Before uploading to One.com
 
-Upload the site files only. **Do not upload `docs/`, `README.md` or
-`.gitignore`** — they are internal and would be publicly readable.
+**See `GO-LIVE.md` for the full step-by-step launch guide**, including how to
+wire the enquiry form to a real inbox.
+
+Upload the site files only. **Do not upload `docs/`, `README.md`, `GO-LIVE.md`
+or `.gitignore`** — they are internal and would be publicly readable.
 
 ## Viewing it locally
 
