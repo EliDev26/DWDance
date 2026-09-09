@@ -1,5 +1,12 @@
 # 5. Implementation Plan & One.com Hosting
 
+> **Superseded for launch and forms.** See `GO-LIVE.md` in the project root for
+> the current, step-by-step upload and enquiry-form instructions. Sections 5.1
+> Phase 4, 5.2 and the image table below predate the 2026 content rework and
+> still refer to pages and placeholders that no longer exist (the timetable
+> table, venue addresses, uniform lists, "Meet the principal"). The design and
+> rationale in the rest of this document still stand.
+
 ---
 
 ## 5.1 Implementation plan

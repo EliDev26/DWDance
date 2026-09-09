@@ -109,27 +109,18 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     items.forEach(function (el) { io.observe(el); });
+
+    // Safety net. Anything the observer has not reached within a few seconds
+    // is revealed anyway. A reader cannot see below-the-fold content, so this
+    // costs nothing visually — but it guarantees that a crawler which runs
+    // the script and never scrolls still finds every section.
+    window.setTimeout(function () {
+      io.disconnect();
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+    }, 4000);
   }());
 
-  /* ------------------------------------------------- 5. Cookie notice bar */
-  (function cookies() {
-    var bar = $('#cookie-bar');
-    if (!bar) return;
-    var KEY = 'dw-cookie-choice';
-    var stored = null;
-    try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = 'skip'; }
-    if (stored) return;                       // already answered (or storage blocked)
-
-    bar.hidden = false;
-    $$('[data-cookie-choice]', bar).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        try { window.localStorage.setItem(KEY, btn.getAttribute('data-cookie-choice')); } catch (e) {}
-        bar.hidden = true;
-      });
-    });
-  }());
-
-  /* ------------------------------------------------- 6. Enquiry form UX */
+  /* ------------------------------------------------- 5. Enquiry form UX */
   (function form() {
     var form = $('#enquiry-form');
     if (!form) return;
@@ -213,7 +204,7 @@
     });
   }());
 
-  /* ------------------------------- 7. Current year in the footer copyright */
+  /* ------------------------------- 6. Current year in the footer copyright */
   $$('[data-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });
