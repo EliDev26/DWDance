@@ -120,25 +120,7 @@
     }, 4000);
   }());
 
-  /* ------------------------------------------------- 5. Cookie notice bar */
-  (function cookies() {
-    var bar = $('#cookie-bar');
-    if (!bar) return;
-    var KEY = 'dw-cookie-choice';
-    var stored = null;
-    try { stored = window.localStorage.getItem(KEY); } catch (e) { stored = 'skip'; }
-    if (stored) return;                       // already answered (or storage blocked)
-
-    bar.hidden = false;
-    $$('[data-cookie-choice]', bar).forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        try { window.localStorage.setItem(KEY, btn.getAttribute('data-cookie-choice')); } catch (e) {}
-        bar.hidden = true;
-      });
-    });
-  }());
-
-  /* ------------------------------------------------- 6. Enquiry form UX */
+  /* ------------------------------------------------- 5. Enquiry form UX */
   (function form() {
     var form = $('#enquiry-form');
     if (!form) return;
@@ -222,7 +204,7 @@
     });
   }());
 
-  /* ------------------------------- 7. Current year in the footer copyright */
+  /* ------------------------------- 6. Current year in the footer copyright */
   $$('[data-year]').forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
   });

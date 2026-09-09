@@ -886,22 +886,6 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .footer-bottom ul { display: flex; flex-wrap: wrap; gap: var(--s-4); }
 
 /* 5.19 Cookie banner ----------------------------------------------------- */
-.cookie-bar {
-  position: fixed;
-  left: var(--s-4); right: var(--s-4); bottom: var(--s-4);
-  z-index: 150;
-  display: flex; flex-wrap: wrap; gap: var(--s-4);
-  align-items: center; justify-content: space-between;
-  max-width: 60rem;
-  margin-inline: auto;
-  padding: var(--s-5);
-  background: var(--c-white);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  box-shadow: var(--shadow-lg);
-  font-size: var(--fs-sm);
-}
-.cookie-bar p { max-width: 46ch; }
 
 /* 5.20 Anchor sub-nav ---------------------------------------------------- */
 .subnav { border-bottom: 1px solid var(--border); background: var(--c-white); }
@@ -1020,7 +1004,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 }
 
 @media print {
-  .site-header, .site-footer, .cookie-bar, .topbar, .subnav, .btn { display: none !important; }
+  .site-header, .site-footer, .topbar, .subnav, .btn { display: none !important; }
   body { color: #000; font-size: 12pt; }
   a::after { content: " (" attr(href) ")"; font-size: 0.85em; }
 }
