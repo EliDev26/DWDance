@@ -62,6 +62,10 @@ Compress them at [squoosh.app](https://squoosh.app) before uploading — aim for
 under 200 KB for the hero and under 100 KB for everything else. Update the
 `alt` text on any image whose subject changes.
 
+**Permission:** before a photograph of a child goes on the site, make sure you
+hold the parent's written consent for that use. There is a form ready to hand
+out in `docs/photo-permission-form.docx` (internal — do not upload it).
+
 `performance.jpg`, `preschool.jpg`, `principal.jpg` and the four `store-*.jpg`
 files are left in the folder but are no longer used by any page. You can
 upload them or not; nothing links to them.
