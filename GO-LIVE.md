@@ -267,6 +267,17 @@ page.
 
 Add `formspree.io` to your contacts so the notifications do not get filtered.
 
+**Step 6 — Update the privacy policy**
+
+Once a form service is in use it becomes a data processor handling parents'
+details, and `privacy.html` currently says the opposite — that the form sends
+nothing to another company. Two changes:
+
+* Under "Who we share it with", name the form provider.
+* If the provider stores data outside the UK (Formspree is US-based), say so.
+
+Skipping this leaves a published statement that is no longer true.
+
 ### 4.3 Alternative — FormSubmit (no account)
 
 If you would rather not sign up for anything, [formsubmit.co](https://formsubmit.co)
