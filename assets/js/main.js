@@ -109,6 +109,15 @@
       });
     }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
     items.forEach(function (el) { io.observe(el); });
+
+    // Safety net. Anything the observer has not reached within a few seconds
+    // is revealed anyway. A reader cannot see below-the-fold content, so this
+    // costs nothing visually — but it guarantees that a crawler which runs
+    // the script and never scrolls still finds every section.
+    window.setTimeout(function () {
+      io.disconnect();
+      items.forEach(function (el) { el.classList.add('is-visible'); });
+    }, 4000);
   }());
 
   /* ------------------------------------------------- 5. Cookie notice bar */
