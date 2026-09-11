@@ -341,10 +341,13 @@ strong, b { font-weight: 600; color: var(--text-strong); }
 
 .brand { display: inline-flex; align-items: center; gap: var(--s-3); text-decoration: none; }
 .brand__mark {
+  /* Real logo art: black silhouette on a transparent ground, so it reads
+     directly on the light header — no background card needed. Override the
+     global `img` placeholder tint (meant for opaque photos), which would
+     otherwise show through the logo's transparent areas as a pink box. */
   width: 44px; height: 44px; flex: none;
-  border-radius: var(--r-sm);
-  background: var(--c-ink-900);
   object-fit: contain;
+  background-color: transparent;
 }
 .brand__text { display: flex; flex-direction: column; line-height: 1.1; justify-content: center; }
 /* Script wordmark: small x-height, so it is set larger than the body serif was,
@@ -864,7 +867,15 @@ table.data tbody tr:last-child td { border-bottom: 0; }
   letter-spacing: var(--ls-wide); text-transform: uppercase; margin-bottom: var(--s-4); }
 .footer-col ul { display: grid; gap: var(--s-3); }
 
-.footer-brand__logo { width: 132px; height: auto; margin-bottom: var(--s-4); }
+/* The logo art is black-on-transparent; invert it to white so it reads on
+   the dark footer background instead of disappearing into it. Same override
+   as .brand__mark: drop the global `img` placeholder tint so filter:invert
+   doesn't turn it into a visible tinted box. */
+.footer-brand__logo {
+  width: 132px; height: auto; margin-bottom: var(--s-4);
+  background-color: transparent;
+  filter: invert(1);
+}
 .footer-brand__name { font-family: var(--font-brand); font-size: var(--fs-xl); font-weight: 400;
   line-height: 1.15; color: var(--c-white); }
 .footer-brand p { margin-top: var(--s-4); max-width: 34ch; }
