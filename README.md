@@ -21,13 +21,16 @@ build step, no framework and no server-side code.
 ├── 404.html              Not-found page
 ├── robots.txt            Search engine + AI crawler directives
 ├── llms.txt              Plain-text site summary for AI assistants
+├── dates.txt             Term dates, holidays & competitions (owner edits this)
 ├── sitemap.xml           XML sitemap
 ├── site.webmanifest      Icons and theme colour
 ├── .htaccess             Optional Apache caching/redirect rules
 ├── assets/
 │   ├── css/styles.css    One stylesheet, design tokens at the top
 │   ├── js/main.js        One script — nav, accordions, form, cookie bar
+│   ├── js/dates.js       Reads dates.txt and draws the dates (Home + Classes)
 │   └── img/              Brand mark + labelled photo placeholders
+├── tests/                Automated checks for dates.js (`node --test tests/`)
 └── docs/                 Strategy, design system, copy, SEO, hosting
 ```
 
@@ -41,9 +44,11 @@ CSS and JS.
 Everything that needs a real value is **highlighted in pale yellow** on the
 page itself. Search the HTML for `class="editable"` to find each one.
 
-1. **Term dates** — `classes.html`, the "Term dates" section. This is the one
-   you will come back to each year; edit only the highlighted cells and the
-   "last updated" line.
+1. **Term dates, holidays and competitions** — all in one plain-text file,
+   `dates.txt`, in the main folder. Edit it in Notepad and upload it; no HTML
+   needs touching. Instructions and templates are at the top of the file, and
+   `classes.html#check-dates` confirms it was read properly. Past dates
+   disappear on their own. See "Update term dates" in `docs/07-owners-guide.md`.
 2. **Class times** — `classes.html`, the "When we teach" section, if the
    Saturday pattern ever changes.
 3. **Teacher profiles** — `about.html`, "Meet the teachers" (three cards:
@@ -98,8 +103,8 @@ page itself. Search the HTML for `class="editable"` to find each one.
 **See `GO-LIVE.md` for the full step-by-step launch guide**, including how to
 wire the enquiry form to a real inbox.
 
-Upload the site files only. **Do not upload `docs/`, `README.md`, `GO-LIVE.md`
-or `.gitignore`** — they are internal and would be publicly readable.
+Upload the site files only. **Do not upload `docs/`, `tests/`, `README.md`,
+`GO-LIVE.md` or `.gitignore`** — they are internal and would be publicly readable.
 
 ## Viewing it locally
 

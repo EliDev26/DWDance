@@ -26,6 +26,13 @@ ErrorDocument 404 /404.html
   ExpiresByType text/html               "access plus 1 hour"
 </IfModule>
 
+# --- dates.txt: always fetch fresh, so date changes show straight away ------
+<IfModule mod_headers.c>
+  <Files "dates.txt">
+    Header set Cache-Control "no-cache"
+  </Files>
+</IfModule>
+
 # --- Security headers --------------------------------------------------------
 # If One.com rejects any single line, delete that line only.
 <IfModule mod_headers.c>

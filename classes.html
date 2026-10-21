@@ -178,35 +178,42 @@
       ==========================================================
       TERM DATES (site owner)
       ----------------------------------------------------------
-      This is the one section you will need to change each year.
-      Edit only the text inside the highlighted <td> cells below
-      and the "last updated" line underneath the table. Add or
-      delete a <tr> row if you need more or fewer terms.
-      Nothing else on the page needs touching.
+      You do not need to edit this page to change dates.
+      Every date here comes from the file  dates.txt  in the
+      main folder of the website: edit that file and upload it.
+      Instructions are at the top of dates.txt.
+      To check it was read properly, visit
+      classes.html#check-dates
       ==========================================================
   -->
-  <section class="section" id="term-dates">
-    <div class="wrap wrap--narrow">
+  <section class="section" id="term-dates" data-dates="section">
+    <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Term dates</p>
         <h2>When we are dancing this year</h2>
-        <p>Classes run during term time only. There are no classes during half term or school holidays unless we tell you otherwise.</p>
+        <p>Classes run on Saturdays during term time. Here is everything coming up &mdash; holidays, the Saturdays we are closed, and competitions our dancers are entered for.</p>
       </div>
 
-      <div class="table-scroll">
-        <table class="data data--compact">
-          <thead>
-            <tr><th scope="col">Term</th><th scope="col">Starts</th><th scope="col">Half term</th><th scope="col">Ends</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Autumn</th><td class="editable">[date]</td><td class="editable">[dates]</td><td class="editable">[date]</td></tr>
-            <tr><th scope="row">Spring</th><td class="editable">[date]</td><td class="editable">[dates]</td><td class="editable">[date]</td></tr>
-            <tr><th scope="row">Summer</th><td class="editable">[date]</td><td class="editable">[dates]</td><td class="editable">[date]</td></tr>
-          </tbody>
-        </table>
+      <div class="date-check" data-dates="check" hidden></div>
+
+      <p class="dates-fallback alert alert--info">Our latest dates could not be shown just now. Please check our <a href="https://www.facebook.com/DonelonWildSchoolofDance" target="_blank" rel="noopener">Facebook page</a> or <a href="contact.html#enquiry">contact us</a> and we will let you know.</p>
+
+      <div class="dates-live">
+        <div class="next-up" data-dates="next-up" hidden></div>
+
+        <div class="dates-cols">
+          <div class="dates-col">
+            <div class="dates-col__head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 14l6 5M15 14l-6 5"/></svg><h3>Holidays &amp; Closures</h3></div>
+            <ul class="date-list" data-dates="closures"></ul>
+          </div>
+          <div class="dates-col dates-col--comp">
+            <div class="dates-col__head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M8 4h8v5a4 4 0 0 1-8 0V4ZM8 6H5a3 3 0 0 0 3 4M16 6h3a3 3 0 0 1-3 4M12 13v4M8 21h8M9 17h6"/></svg><h3>Competitions</h3></div>
+            <ul class="date-list" data-dates="competitions"></ul>
+          </div>
+        </div>
       </div>
 
-      <p class="mt-5 muted text-sm">Term dates last updated <span class="editable">[month, year]</span>. If you are ever unsure whether a class is running, <a href="contact.html#enquiry">just ask us</a>.</p>
+      <p class="mt-6 muted text-sm">Dates can occasionally change. If you are ever unsure whether a class is running, <a href="contact.html#enquiry">just ask us</a>.</p>
     </div>
   </section>
 
@@ -330,6 +337,7 @@
 </footer>
 
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/dates.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",

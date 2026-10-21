@@ -29,7 +29,7 @@ The ones that matter before launch:
 
 | What | Where |
 |---|---|
-| Term dates + "last updated" line | `classes.html` → Term dates |
+| Term dates, holidays, competitions | `dates.txt` (then check `classes.html#check-dates`) |
 | Three teacher bios and roles | `about.html` → Meet the teachers |
 | Three teacher photos | `assets/img/teacher-1.jpg`, `-2`, `-3` |
 | Real testimonials (with permission) | `index.html`, `about.html` |
@@ -135,17 +135,18 @@ index.html          classes.html        store.html
 about.html          contact.html        thank-you.html
 privacy.html        cookies.html        404.html
 robots.txt          sitemap.xml         llms.txt
-site.webmanifest    .htaccess
+site.webmanifest    .htaccess           dates.txt
 
 assets/css/styles.css
 assets/js/main.js
+assets/js/dates.js
 assets/img/          (every image file)
 ```
 
 **Do not upload** — these are internal and would be publicly readable:
 
 ```
-docs/        README.md        GO-LIVE.md        .gitignore        .git/
+docs/        tests/        README.md        GO-LIVE.md        .gitignore        .git/
 ```
 
 ### 2.7 About `.htaccess`
@@ -332,6 +333,7 @@ the site. Formspree is the simpler answer.
 ## Making an edit later
 
 Edit the file, save it, upload just that one file, then refresh with
-Ctrl+F5 (Cmd+Shift+R on a Mac) to get past the cache. Term dates are the one
-thing you will change regularly — they are in `classes.html`, marked with a
-comment saying exactly which cells to edit.
+Ctrl+F5 (Cmd+Shift+R on a Mac) to get past the cache. Dates are the one
+thing you will change regularly — they all live in `dates.txt`, which has its
+own instructions at the top. Upload it, then visit `classes.html#check-dates`
+to confirm every entry was read.

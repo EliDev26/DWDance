@@ -69,6 +69,54 @@ becomes
 
 `&pound;` is the code for £. Typing `£` directly works too.
 
+### Update term dates, holidays and competitions
+
+You never edit a web page for this. Every date on the Classes page — and the
+"Coming up" box on the Home page — comes from one plain-text file,
+**`dates.txt`**, in the main folder of the website.
+
+1. Download `dates.txt` from One.com's File Manager (keep a backup copy).
+2. Open it in Notepad or TextEdit (plain text). The top of the file explains
+   everything and has a template for each kind of entry.
+3. Add, change or delete entries. Each entry is a short block with a blank
+   line after it:
+
+```
+Term: Spring term
+Starts: Sat 9 Jan 2027
+Ends: Sat 27 Mar 2027
+Half term: Sat 13 Feb 2027
+
+Closed: Sat 19 Dec 2026 to Sat 2 Jan 2027
+Reason: Christmas holidays
+
+Competition: NATD North West Festival
+Date: Sat 14 Nov 2026
+Venue: Bolton Albert Halls
+Who: Juniors & Intermediates
+Notes: Arrive 9am in full costume
+```
+
+4. Upload it to replace the old one.
+5. Visit **`dwdance.co.uk/classes.html#check-dates`**. A green box means every
+   entry was read; a red box lists anything that wasn't, with the line number
+   and what to fix. Entries that can't be read are simply left off the site —
+   nothing else breaks.
+
+What happens on its own:
+
+* **Past dates disappear** the day after they finish. Tidy the file whenever
+  you like, but there's no rush.
+* **Half terms** from each `Term:` entry appear under *Holidays & Closures*.
+* **"Back to class"** appears for the first Saturday of each term.
+* The banner at the top says whether there are classes **this Saturday**, and
+  if not, when they return.
+* Venue, Who and Notes on a competition are optional — leave out any you
+  don't need.
+
+Dates can be written `Sat 14 Nov 2026`, `Saturday 14th November 2026` or
+`14/11/2026`. Always include the year.
+
 ### Update the timetable
 
 `classes.html` → search for `<tbody>` under "Weekly timetable". Each row is:

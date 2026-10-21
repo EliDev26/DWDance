@@ -916,6 +916,95 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 }
 .subnav a:hover { background: var(--c-blush-100); color: var(--brand-hover); }
 
+/* 5.21 Dates — term dates, closures, competitions ------------------------ */
+
+/* Calendar-style date tile, shared by every list. */
+.date-tile {
+  flex: none;
+  display: grid; place-content: center; text-align: center;
+  width: 3.75rem; height: 3.75rem;
+  background: var(--c-white);
+  border: 1px solid var(--c-blush-200);
+  border-radius: var(--r-md);
+  line-height: 1;
+}
+.date-tile__day { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; color: var(--text-strong); }
+.date-tile__month { margin-top: 0.2rem; font-size: 0.6875rem; font-weight: 700; letter-spacing: var(--ls-wide);
+  text-transform: uppercase; color: var(--c-rose-700); }
+.date-tile--closed { background: var(--c-blush-50); }
+.date-tile--comp { background: #FBF6EC; border-color: var(--c-gold-300); }
+.date-tile--comp .date-tile__month { color: var(--c-gold-700); }
+.date-tile--return { background: var(--c-success-50); border-color: #BFDCCB; }
+.date-tile--return .date-tile__month { color: var(--c-success-700); }
+
+/* "Next up" banner */
+.next-up {
+  display: flex; gap: var(--s-5); align-items: center;
+  padding: var(--s-5) var(--s-6);
+  margin-bottom: var(--s-7);
+  background: linear-gradient(135deg, var(--c-blush-100), var(--c-blush-50) 70%);
+  border: 1px solid var(--c-blush-200);
+  border-left: 4px solid var(--c-rose-600);
+  border-radius: var(--r-md);
+}
+.next-up--open { background: var(--c-white); border-left-color: var(--c-success-700); }
+.next-up--open .next-up__label { color: var(--c-success-700); }
+.next-up .date-tile { width: 4.5rem; height: 4.5rem; border-color: var(--c-blush-300); }
+.next-up .date-tile__day { font-size: 1.875rem; }
+.next-up__label { font-size: var(--fs-xs); font-weight: 700; letter-spacing: var(--ls-wide); text-transform: uppercase; color: var(--c-rose-700); }
+.next-up__title { margin-top: var(--s-1); font-family: var(--font-display); font-size: var(--fs-lg); color: var(--text-strong); line-height: var(--lh-snug); }
+.next-up__text { margin-top: var(--s-1); font-size: var(--fs-sm); color: var(--text-muted); }
+
+/* Holidays & Closures + Competitions lists */
+.dates-cols { display: grid; gap: var(--s-6); }
+@media (min-width: 62em) { .dates-cols { grid-template-columns: 1fr 1fr; gap: var(--s-7); } }
+.dates-col__head { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-4);
+  padding-bottom: var(--s-3); border-bottom: 2px solid var(--c-blush-200); }
+.dates-col__head svg { width: 22px; height: 22px; color: var(--c-rose-600); flex: none; }
+.dates-col--comp .dates-col__head { border-color: var(--c-gold-300); }
+.dates-col--comp .dates-col__head svg { color: var(--c-gold-700); }
+.dates-col__head h3 { font-size: var(--fs-lg); }
+
+.date-list { display: grid; gap: var(--s-3); }
+.date-item { display: flex; gap: var(--s-4); align-items: flex-start; padding: var(--s-4);
+  background: var(--c-white); border: 1px solid var(--border); border-radius: var(--r-md); }
+.date-item__title { font-weight: 600; color: var(--text-strong); line-height: var(--lh-snug); }
+.date-item__when { margin-top: 0.15rem; font-size: var(--fs-sm); color: var(--text-muted); }
+.date-item__meta { display: grid; gap: var(--s-1); margin-top: var(--s-3); font-size: var(--fs-sm); }
+.date-item__meta div { display: flex; gap: var(--s-2); }
+.date-item__meta dt { flex: 0 0 4rem; font-weight: 600; color: var(--text-strong); }
+.date-item__meta dd { margin: 0; color: var(--text-muted); }
+.date-item__note { margin-top: var(--s-3); padding: var(--s-2) var(--s-3); background: #FBF6EC;
+  border-radius: var(--r-sm); font-size: var(--fs-sm); color: var(--c-gold-700); }
+
+.dates-empty { padding: var(--s-5); border: 1px dashed var(--c-ink-300); border-radius: var(--r-md);
+  font-size: var(--fs-sm); color: var(--text-muted); text-align: center; }
+
+/* Home: "Coming up" strip */
+.coming-up { display: grid; gap: var(--s-4); align-items: center; padding: var(--s-5) var(--s-6);
+  background: var(--c-white); border: 1px solid var(--border); border-radius: var(--r-md); box-shadow: var(--shadow-sm); }
+@media (min-width: 62em) { .coming-up { grid-template-columns: auto 1fr auto; gap: var(--s-6); } }
+.coming-up__label { font-family: var(--font-display); font-size: var(--fs-lg); color: var(--text-strong); white-space: nowrap; }
+.coming-up__list { display: grid; gap: var(--s-3); }
+@media (min-width: 40em) { .coming-up__list { grid-template-columns: repeat(3, 1fr); } }
+.coming-up__item { display: flex; gap: var(--s-3); align-items: center; min-width: 0; }
+.coming-up__item .date-tile { width: 3rem; height: 3rem; }
+.coming-up__item .date-tile__day { font-size: 1.25rem; }
+.coming-up__text strong { display: block; font-size: var(--fs-sm); color: var(--text-strong); line-height: 1.3; }
+.coming-up__text span { display: block; font-size: var(--fs-xs); color: var(--text-muted); }
+.coming-up__link { font-size: var(--fs-sm); font-weight: 600; white-space: nowrap; }
+
+/* Shown until dates.txt has loaded, and kept if it can't be loaded (or there
+   is no JavaScript). The lists stay hidden until there's something in them. */
+.dates-live { display: none; }
+.is-loaded .dates-live { display: block; }
+.is-loaded .dates-fallback { display: none; }
+.js [data-dates="section"]:not(.is-failed):not(.is-loaded) .dates-fallback { visibility: hidden; }
+.date-check { margin-bottom: var(--s-6); }
+.date-check__list { margin-top: var(--s-2); padding-left: var(--s-5); }
+.date-check__list li { list-style: disc; }
+@media (max-width: 30em) { .next-up { flex-direction: column; align-items: flex-start; gap: var(--s-4); padding: var(--s-5); } }
+
 /* --------------------------------------------------------------------------
    6. UTILITIES
    -------------------------------------------------------------------------- */
