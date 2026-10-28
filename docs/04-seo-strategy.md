@@ -45,9 +45,9 @@ All of the following is already implemented in the HTML.
 ### About Us — `about.html`
 
 * **Title** — `About Our Dance School in Stretford, Manchester | DW Dance`
-* **Meta description** — *Founded in Stretford in 2016 by Bethany Donelon and Sally Wild. Our story, teaching, NATD training, performances and a safe, supportive environment.*
+* **Meta description** — *Founded in Stretford in 2016 by Miss Bethany and Miss Sally. Our story, teaching, NATD training, performances and a safe, supportive environment.*
 * **H1** — The school Bethany and Sally built
-* **H2s** — Built on teaching, not on numbers · How we teach — and why · NATD examination training · Opportunities to perform · A safe and supportive environment · Miss Bethany Donelon · What parents and students say
+* **H2s** — Built on teaching, not on numbers · How we teach — and why · NATD examination training · Opportunities to perform · A safe and supportive environment · Miss Bethany · What parents and students say
 * **Primary keyword** — dance school Stretford
 * **Secondary** — NATD dance school Manchester, safe dance classes for children Trafford
 
