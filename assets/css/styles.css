@@ -796,6 +796,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 /* 5.14 Contact strip ----------------------------------------------------- */
 .contact-tiles { display: grid; gap: var(--s-4); }
 @media (min-width: 48em) { .contact-tiles { grid-template-columns: repeat(3, 1fr); } }
+@media (min-width: 48em) { .contact-tiles--2 { grid-template-columns: repeat(2, 1fr); max-width: 48rem; margin-inline: auto; } }
 .contact-tile {
   display: flex; gap: var(--s-4); align-items: flex-start;
   padding: var(--s-5);

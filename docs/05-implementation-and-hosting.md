@@ -74,7 +74,7 @@ The honeypot field is already in place; keep it whichever route you choose.
 
 - [ ] Every page opens and the navigation works on a real phone
 - [ ] `grep -c editable *.html` returns 0 for anything that should be finished
-- [ ] All phone links dial and all email links open a message
+- [ ] All email links open a message
 - [ ] The store button opens `ddw.mydancestore.co.uk` in a new tab
 - [ ] The enquiry form sends, and the reply lands somewhere you check
 - [ ] `thank-you.html` shows after submission

@@ -54,7 +54,7 @@ All of the following is already implemented in the HTML.
 ### Contact — `contact.html`
 
 * **Title** — `Contact Us – Book a Free Taster Class | DW Dance, Stretford`
-* **Meta description** — *Enquire about children's dance classes in Stretford, Flixton, Urmston and Davyhulme. Call 07910 603360 or send an enquiry for a free taster class.*
+* **Meta description** — *Enquire about children's dance classes in Stretford, Flixton, Urmston and Davyhulme. Email us or send an enquiry for a free taster class.*
 * **H1** — Book a free taster class
 * **H2s** — Send an enquiry · Where we teach · Quick answers · Prefer to talk it through?
 * **Primary keyword** — dance classes near me Urmston

@@ -103,7 +103,7 @@ page links to it: `<link rel="alternate" type="text/markdown" href="/llms.txt">`
 | Type | Where | Why it matters |
 |---|---|---|
 | `LocalBusiness` + `DanceSchool` | Home | Identity, area served, founders, founding date |
-| `ContactPoint` ×2 | Home | Both phone numbers, with roles |
+| `ContactPoint` | Home | Enquiry email (no phone numbers are published) |
 | `Course` ×3 | Home | Ballet, tap and modern as discrete offerings with age ranges and levels |
 | `WebSite` | Home | Site-level identity |
 | `FAQPage` ×3 | Classes, Contact, Store | 18 question/answer pairs, machine-readable |

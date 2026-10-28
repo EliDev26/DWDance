@@ -167,7 +167,7 @@ Open `https://www.dwdance.co.uk` and work through:
 - [ ] The same on a real phone, not just a narrow browser window
 - [ ] Images all appear (a broken image means the `assets` structure got flattened)
 - [ ] The page looks styled — if it is unstyled text, `assets/css/styles.css` is missing
-- [ ] Phone numbers dial and email links open a message
+- [ ] Email links open a message
 - [ ] The store button opens ddw.mydancestore.co.uk in a new tab
 - [ ] A made-up URL like `dwdance.co.uk/nope` shows the DW Dance 404 page
 - [ ] The padlock shows in the address bar
