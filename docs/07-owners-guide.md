@@ -69,7 +69,7 @@ becomes
 
 `&pound;` is the code for £. Typing `£` directly works too.
 
-### Update term dates, holidays and competitions
+### Update term dates, holidays, exams and competitions
 
 You never edit a web page for this. Every date on the Classes page — and the
 "Coming up" box on the Home page — comes from one plain-text file,
@@ -87,8 +87,12 @@ Starts: Sat 9 Jan 2027
 Ends: Sat 27 Mar 2027
 Half term: Sat 13 Feb 2027
 
-Closed: Sat 19 Dec 2026 to Sat 2 Jan 2027
+Closed: Mon 14 Dec 2026 to Sun 3 Jan 2027
 Reason: Christmas holidays
+Notes: Our last class before Christmas is Saturday 12 December.
+
+Exam: NATD examinations
+Date: Sun 6 Dec 2026
 
 Competition: NATD North West Festival
 Date: Sat 14 Nov 2026
@@ -111,8 +115,10 @@ What happens on its own:
 * **"Back to class"** appears for the first Saturday of each term.
 * The banner at the top says whether there are classes **this Saturday**, and
   if not, when they return.
-* Venue, Who and Notes on a competition are optional — leave out any you
-  don't need.
+* The page shows **Holidays & Closures** and **Exams** as the two main lists,
+  with **Competitions** in a smaller band underneath.
+* Venue, Who and Notes on an exam or competition are optional, and so are
+  Reason and Notes on a closure — leave out any you don't need.
 
 Dates can be written `Sat 14 Nov 2026`, `Saturday 14th November 2026` or
 `14/11/2026`. Always include the year.

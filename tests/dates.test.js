@@ -147,6 +147,31 @@ test('nextUp: between terms points to the next term, and hides when nothing is l
   assert.equal(between.title, 'Classes return Saturday 9 January 2027');
 });
 
+test('exams are their own list, and closures can carry a note', () => {
+  const data = dates.parse(`Exam: NATD examinations
+Date: Sun 6th Dec 26
+Venue: The studio
+Closed: Mon 14 Dec 2026 to Sun 3 Jan 2027
+Reason: Christmas holidays
+Notes: Our last class before Christmas is Saturday 12 December.
+
+Exam: No date`);
+  assert.equal(data.exams.length, 1);
+  assert.equal(data.exams[0].type, 'exam');
+  assert.equal(ymd(data.exams[0].start), '2026-12-6');
+  assert.equal(data.exams[0].venue, 'The studio');
+  assert.equal(data.competitions.length, 0);
+  assert.equal(data.closures[0].notes, 'Our last class before Christmas is Saturday 12 December.');
+  assert.match(data.errors[0].message, /Exam "No date" needs a Date/);
+});
+
+test('with no terms listed, Christmas closure still gives the return date', () => {
+  const data = dates.parse('Closed: Mon 14 Dec 2026 to Sun 3 Jan 2027\nReason: Christmas holidays');
+  const info = dates.nextUp(data, new Date(2026, 11, 16)); // Wed 16 Dec
+  assert.equal(info.title, 'No classes — Christmas holidays');
+  assert.equal(info.strong, 'Classes return on Saturday 9 January 2027.');
+});
+
 test('formatCompact keeps dates short for the home strip', () => {
   const r = (a, b) => dates.formatCompact(dates.parseRange(b ? a + ' to ' + b : a));
   assert.equal(r('Sat 21 Nov 2026'), 'Sat 21 Nov');
@@ -158,5 +183,5 @@ test('the shipped dates.txt reads cleanly', () => {
   const text = fs.readFileSync(path.join(__dirname, '..', 'dates.txt'), 'utf8');
   const data = dates.parse(text);
   assert.deepEqual(data.errors, []);
-  assert.ok(data.terms.length && data.closures.length && data.competitions.length);
+  assert.ok(data.closures.length && data.exams.length && data.competitions.length);
 });

@@ -917,7 +917,7 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 }
 .subnav a:hover { background: var(--c-blush-100); color: var(--brand-hover); }
 
-/* 5.21 Dates — term dates, closures, competitions ------------------------ */
+/* 5.21 Dates — closures, exams, competitions ----------------------------- */
 
 /* Calendar-style date tile, shared by every list. */
 .date-tile {
@@ -935,6 +935,8 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .date-tile--closed { background: var(--c-blush-50); }
 .date-tile--comp { background: #FBF6EC; border-color: var(--c-gold-300); }
 .date-tile--comp .date-tile__month { color: var(--c-gold-700); }
+.date-tile--exam { background: var(--c-ink-100); border-color: var(--c-ink-200); }
+.date-tile--exam .date-tile__month { color: var(--c-ink-900); }
 .date-tile--return { background: var(--c-success-50); border-color: #BFDCCB; }
 .date-tile--return .date-tile__month { color: var(--c-success-700); }
 
@@ -956,14 +958,14 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .next-up__title { margin-top: var(--s-1); font-family: var(--font-display); font-size: var(--fs-lg); color: var(--text-strong); line-height: var(--lh-snug); }
 .next-up__text { margin-top: var(--s-1); font-size: var(--fs-sm); color: var(--text-muted); }
 
-/* Holidays & Closures + Competitions lists */
+/* Holidays & Closures + Exams: the two main lists */
 .dates-cols { display: grid; gap: var(--s-6); }
 @media (min-width: 62em) { .dates-cols { grid-template-columns: 1fr 1fr; gap: var(--s-7); } }
 .dates-col__head { display: flex; align-items: center; gap: var(--s-3); margin-bottom: var(--s-4);
   padding-bottom: var(--s-3); border-bottom: 2px solid var(--c-blush-200); }
 .dates-col__head svg { width: 22px; height: 22px; color: var(--c-rose-600); flex: none; }
-.dates-col--comp .dates-col__head { border-color: var(--c-gold-300); }
-.dates-col--comp .dates-col__head svg { color: var(--c-gold-700); }
+.dates-col--exam .dates-col__head { border-color: var(--c-ink-300); }
+.dates-col--exam .dates-col__head svg { color: var(--c-ink-900); }
 .dates-col__head h3 { font-size: var(--fs-lg); }
 
 .date-list { display: grid; gap: var(--s-3); }
@@ -977,6 +979,26 @@ table.data tbody tr:last-child td { border-bottom: 0; }
 .date-item__meta dd { margin: 0; color: var(--text-muted); }
 .date-item__note { margin-top: var(--s-3); padding: var(--s-2) var(--s-3); background: #FBF6EC;
   border-radius: var(--r-sm); font-size: var(--fs-sm); color: var(--c-gold-700); }
+.date-item__note--closed { background: var(--c-blush-50); color: var(--c-rose-700); }
+.date-item__note--exam { background: var(--c-ink-100); color: var(--c-ink-900); }
+
+/* Competitions: a smaller band under the main lists */
+.comp-band { margin-top: var(--s-7); padding: var(--s-5); background: #FBF6EC;
+  border: 1px solid var(--c-gold-300); border-radius: var(--r-md); }
+.comp-band__head { display: flex; align-items: center; gap: var(--s-2); margin-bottom: var(--s-4); }
+.comp-band__head svg { width: 20px; height: 20px; color: var(--c-gold-700); flex: none; }
+.comp-band__head h3 { font-size: var(--fs-md); }
+.comp-list { display: grid; gap: var(--s-3); }
+@media (min-width: 40em) { .comp-list { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); } }
+.comp-item { display: flex; gap: var(--s-3); align-items: center; min-width: 0; padding: var(--s-3);
+  background: var(--c-white); border-radius: var(--r-sm); }
+.comp-item .date-tile { width: 2.75rem; height: 2.75rem; }
+.comp-item .date-tile__day { font-size: 1.125rem; }
+.comp-item .date-tile__month { font-size: 0.625rem; }
+.comp-item__title { font-size: var(--fs-sm); font-weight: 600; color: var(--text-strong); line-height: 1.3; }
+.comp-item__when, .comp-item__note { margin-top: 0.1rem; font-size: var(--fs-xs); color: var(--text-muted); }
+.comp-item__note { color: var(--c-gold-700); }
+.dates-empty--small { grid-column: 1 / -1; padding: var(--s-3); }
 
 .dates-empty { padding: var(--s-5); border: 1px dashed var(--c-ink-300); border-radius: var(--r-md);
   font-size: var(--fs-sm); color: var(--text-muted); text-align: center; }

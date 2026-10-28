@@ -6,7 +6,7 @@
 #
 #  HOW TO EDIT
 #  * One block per item. Leave an empty line between blocks.
-#  * Start each block with  Term:  Closed:  or  Competition:
+#  * Start each block with  Term:  Closed:  Exam:  or  Competition:
 #  * Write dates like  Sat 14 Nov 2026  or  14/11/2026
 #  * For a run of dates, use "to":  Sat 19 Dec 2026 to Sat 2 Jan 2027
 #  * Lines starting with # are notes for you and never appear on the site.
@@ -21,8 +21,15 @@
 #  Ends: Sat 12 Dec 2026
 #  Half term: Sat 24 Oct 2026 to Sat 31 Oct 2026
 #
-#  Closed: Sat 21 Nov 2026
-#  Reason: Studio maintenance       (optional)
+#  Closed: Mon 14 Dec 2026 to Sun 3 Jan 2027
+#  Reason: Christmas holidays       (optional)
+#  Notes: Last class Sat 12 Dec     (optional)
+#
+#  Exam: NATD examinations
+#  Date: Sun 6 Dec 2026
+#  Venue: ...                       (optional)
+#  Who: ...                         (optional)
+#  Notes: ...                       (optional)
 #
 #  Competition: NATD North West Festival
 #  Date: Sat 14 Nov 2026
@@ -33,44 +40,30 @@
 
 
 # ---------------------------------------------------------------- TERMS
-
-Term: Autumn term
-Starts: Sat 5 Sep 2026
-Ends: Sat 12 Dec 2026
-Half term: Sat 24 Oct 2026 to Sat 31 Oct 2026
-
-Term: Spring term
-Starts: Sat 9 Jan 2027
-Ends: Sat 27 Mar 2027
-Half term: Sat 13 Feb 2027
-
-Term: Summer term
-Starts: Sat 17 Apr 2027
-Ends: Sat 17 Jul 2027
-Half term: Sat 29 May 2027
+# Optional. Add a Term: entry (see the template above) and the site will
+# also list its half term and a "Back to class" line automatically.
 
 
 # ------------------------------------------------ HOLIDAYS & CLOSURES
-# Half terms, and a "Back to class" line for each term start, are added
-# to this list automatically from the terms above. Use Closed: for
-# everything else — school holidays, bank holidays, one-off closures.
 
-Closed: Sat 21 Nov 2026
-Reason: Studio maintenance
-
-Closed: Sat 19 Dec 2026 to Sat 2 Jan 2027
+Closed: Mon 14 Dec 2026 to Sun 3 Jan 2027
 Reason: Christmas holidays
+Notes: Our last class before Christmas is Saturday 12 December.
+
+
+# ---------------------------------------------------------------- EXAMS
+
+Exam: NATD examinations
+Date: Sun 6 Dec 2026
 
 
 # -------------------------------------------------------- COMPETITIONS
 
-Competition: NATD North West Festival
-Date: Sat 14 Nov 2026
-Venue: Bolton Albert Halls
-Who: Juniors & Intermediates
-Notes: Arrive 9am in full costume, hair in a bun.
+Competition: Competition
+Date: Sat 7 Nov 2026
 
-Competition: Stockport Dance Festival
-Date: Sat 6 Mar 2027
-Venue: Stockport Plaza
-Who: Seniors — troupe and solos
+Competition: Competition
+Date: Sat 14 Nov 2026
+
+Competition: Competition
+Date: Sun 15 Nov 2026

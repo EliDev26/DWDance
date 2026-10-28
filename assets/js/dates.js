@@ -53,18 +53,18 @@
 
   var KEY_ALIASES = {
     term: 'term', closed: 'closed', closure: 'closed', holiday: 'closed',
-    competition: 'competition',
+    competition: 'competition', exam: 'exam', exams: 'exam', examination: 'exam', examinations: 'exam',
     starts: 'starts', start: 'starts', ends: 'ends', end: 'ends',
     'half term': 'halfterm', halfterm: 'halfterm', 'half-term': 'halfterm',
     date: 'date', dates: 'date', reason: 'reason', venue: 'venue', where: 'venue',
     who: 'who', notes: 'notes', note: 'notes'
   };
 
-  // Turns the whole text file into { terms, closures, competitions, errors }.
+  // Turns the whole text file into { terms, closures, exams, competitions, errors }.
   // Each term also gives a "Back to class" item; see listItems().
   // A block that can't be read is skipped and reported, never fatal.
   function parse(text) {
-    var out = { terms: [], closures: [], competitions: [], errors: [] };
+    var out = { terms: [], closures: [], exams: [], competitions: [], errors: [] };
     var blocks = [], current = null;
 
     String(text).replace(/\r\n?/g, '\n').split('\n').forEach(function (raw, i) {
@@ -74,9 +74,9 @@
       var colon = line.indexOf(':');
       var label = colon > 0 ? line.slice(0, colon).trim().toLowerCase().replace(/\s+/g, ' ') : '';
       var key = colon > 0 ? KEY_ALIASES[label] || label : null;
-      // A Term:/Closed:/Competition: line always starts a new block, so a
+      // A Term:/Closed:/Exam:/Competition: line always starts a new block, so a
       // forgotten blank line between two entries does no harm.
-      if (!current || /^(term|closed|competition)$/.test(key)) {
+      if (!current || /^(term|closed|exam|competition)$/.test(key)) {
         current = { line: i + 1, fields: [] };
         blocks.push(current);
       }
@@ -93,6 +93,7 @@
     });
 
     out.closures.sort(byStart);
+    out.exams.sort(byStart);
     out.competitions.sort(byStart);
     out.terms.sort(byStart);
     return out;
@@ -120,15 +121,18 @@
       }
     } else if (first.key === 'closed') {
       var when = parseRange(first.value || f.date || '');
-      out.closures.push({ type: 'closed', title: f.reason || 'Studio closed', start: when.start, end: when.end });
-    } else if (first.key === 'competition') {
-      if (!first.value) throw new Error('Competition on line ' + first.line + ' needs a name after "Competition:"');
-      if (!f.date) throw new Error('Competition "' + first.value + '" needs a Date: line');
+      out.closures.push({ type: 'closed', title: f.reason || 'Studio closed', start: when.start, end: when.end,
+                          notes: f.notes || '' });
+    } else if (first.key === 'exam' || first.key === 'competition') {
+      var kind = first.key === 'exam' ? 'Exam' : 'Competition';
+      if (!first.value) throw new Error(kind + ' on line ' + first.line + ' needs a name after "' + kind + ':"');
+      if (!f.date) throw new Error(kind + ' "' + first.value + '" needs a Date: line');
       var day = parseRange(f.date);
-      out.competitions.push({ type: 'competition', title: first.value, start: day.start, end: day.end,
-                              venue: f.venue || '', who: f.who || '', notes: f.notes || '' });
+      out[first.key === 'exam' ? 'exams' : 'competitions'].push({
+        type: first.key, title: first.value, start: day.start, end: day.end,
+        venue: f.venue || '', who: f.who || '', notes: f.notes || '' });
     } else {
-      throw new Error('Line ' + first.line + ' should start with Term:, Closed: or Competition:');
+      throw new Error('Line ' + first.line + ' should start with Term:, Closed:, Exam: or Competition:');
     }
   }
 
@@ -184,7 +188,7 @@
       return { label: 'Next term', date: restart, kind: 'closed', title: 'Classes return ' + formatLong(restart, today),
                text: 'There are no classes until then. Enjoy the break!', strong: '' };
     }
-    var comp = within(data.competitions, sat);
+    var comp = within(data.competitions.concat(data.exams), sat);
     var nextBreak = upcoming(data.closures, today)[0];
     return { label: label, date: sat, kind: 'open', title: 'Classes as normal',
              text: comp ? 'Good luck to everyone dancing at ' + comp.title + '!'
@@ -236,7 +240,7 @@
     return parent;
   }
 
-  var KIND = { closed: 'closed', competition: 'comp', 'return': 'return' };
+  var KIND = { closed: 'closed', competition: 'comp', exam: 'exam', 'return': 'return' };
 
   function tile(date, kind) {
     var t = el('span', 'date-tile' + (kind ? ' date-tile--' + kind : ''));
@@ -255,11 +259,23 @@
     list.textContent = '';
     if (!items.length) { add(list, el('li', 'dates-empty', empty)); return; }
     items.forEach(function (item) {
-      var isComp = item.type === 'competition';
       var when = (item.note ? item.note + ' · ' : '') + formatWhen(item, today);
-      var body = add(el('div'), el('p', 'date-item__title', item.title), el('p', 'date-item__when', when));
-      if (isComp) add(body, meta([['Venue', item.venue], ['Who', item.who]]), item.notes && el('p', 'date-item__note', item.notes));
+      var body = add(el('div'), el('p', 'date-item__title', item.title), el('p', 'date-item__when', when),
+                     meta([['Venue', item.venue], ['Who', item.who]]),
+                     item.notes && el('p', 'date-item__note date-item__note--' + KIND[item.type], item.notes));
       add(list, add(el('li', 'date-item'), tile(item.start, KIND[item.type]), body));
+    });
+  }
+
+  // Competitions get the smaller treatment: one line each, details inline.
+  function renderCompact(list, items, empty, today) {
+    list.textContent = '';
+    if (!items.length) { add(list, el('li', 'dates-empty dates-empty--small', empty)); return; }
+    items.forEach(function (item) {
+      var sub = [formatWhen(item, today), item.venue, item.who].filter(Boolean).join(' · ');
+      add(list, add(el('li', 'comp-item'), tile(item.start, 'comp'),
+                    add(el('div'), el('p', 'comp-item__title', item.title), el('p', 'comp-item__when', sub),
+                        item.notes && el('p', 'comp-item__note', item.notes))));
     });
   }
 
@@ -277,11 +293,15 @@
 
   function renderComingUp(root, data, now) {
     var today = midnight(now);
-    var items = listItems(data, today).concat(upcoming(data.competitions, today)).sort(byStart).slice(0, 3);
+    var items = listItems(data, today).concat(upcoming(data.exams, today), upcoming(data.competitions, today))
+      .sort(byStart).slice(0, 3);
     if (!items.length) return;
     var list = root.querySelector('[data-dates="coming-up"]');
     items.forEach(function (item) {
-      var sub = item.type === 'competition' ? item.venue || formatCompact(item)
+      // "Competition · Sat 7 Nov", unless the name already says what it is.
+      var label = { competition: 'Competition', exam: 'Exam' }[item.type];
+      var named = label && item.title.toLowerCase().indexOf(label.toLowerCase()) >= 0;
+      var sub = label ? (named ? '' : label + ' · ') + formatCompact(item)
               : item.type === 'return' ? item.note
               : 'No classes · ' + formatCompact(item);
       add(list, add(el('li', 'coming-up__item'), tile(item.start, KIND[item.type]),
@@ -293,7 +313,7 @@
   function renderCheck(root, data) {
     var box = root.querySelector('[data-dates="check"]');
     if (!box) return;
-    var total = data.terms.length + data.closures.length + data.competitions.length;
+    var total = data.terms.length + data.closures.length + data.exams.length + data.competitions.length;
     box.textContent = '';
     if (!data.errors.length) {
       box.className = 'alert alert--success';
@@ -316,8 +336,10 @@
       renderNextUp(section.querySelector('[data-dates="next-up"]'), data, now);
       renderList(section.querySelector('[data-dates="closures"]'), listItems(data, today),
                  'No holidays or closures coming up — classes are running as normal.', today);
-      renderList(section.querySelector('[data-dates="competitions"]'), upcoming(data.competitions, today),
-                 'No competitions coming up just now. Dates will appear here as soon as they are confirmed.', today);
+      renderList(section.querySelector('[data-dates="exams"]'), upcoming(data.exams, today),
+                 'No exams coming up just now. Dates will appear here as soon as they are confirmed.', today);
+      renderCompact(section.querySelector('[data-dates="competitions"]'), upcoming(data.competitions, today),
+                    'No competitions coming up just now.', today);
       section.classList.add('is-loaded');
       if (window.location.hash === '#check-dates') renderCheck(section, data);
     }

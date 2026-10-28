@@ -44,7 +44,7 @@ CSS and JS.
 Everything that needs a real value is **highlighted in pale yellow** on the
 page itself. Search the HTML for `class="editable"` to find each one.
 
-1. **Term dates, holidays and competitions** — all in one plain-text file,
+1. **Term dates, holidays, exams and competitions** — all in one plain-text file,
    `dates.txt`, in the main folder. Edit it in Notepad and upload it; no HTML
    needs touching. Instructions and templates are at the top of the file, and
    `classes.html#check-dates` confirms it was read properly. Past dates
